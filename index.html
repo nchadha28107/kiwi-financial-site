@@ -1,0 +1,430 @@
+<!DOCTYPE html>
+<html lang="en-NZ" data-root="" data-page="home">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Mortgage Brokers Auckland | Kiwi Financial Solutions</title>
+<meta name="description" content="Auckland's independent mortgage advisers. We compare 15+ NZ lenders to find your best home loan rate. Free advice, no bank ties. Call 027 303 0000.">
+<link rel="canonical" href="https://kiwifinancial.co.nz/">
+<meta name="theme-color" content="#0C0634">
+
+<meta property="og:type" content="website">
+<meta property="og:title" content="Mortgage Brokers Auckland | Kiwi Financial Solutions">
+<meta property="og:description" content="We compare 15+ NZ lenders so you get the best deal, not just any deal. Free, independent mortgage advice.">
+<meta property="og:url" content="https://kiwifinancial.co.nz/">
+<meta property="og:image" content="https://kiwifinancial.co.nz/assets/images/og-image.png">
+<meta property="og:site_name" content="Kiwi Financial Solutions">
+<meta name="twitter:card" content="summary_large_image">
+
+<link rel="icon" href="favicon.ico" sizes="any">
+<link rel="apple-touch-icon" href="assets/images/apple-touch-icon.png">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Plus+Jakarta+Sans:wght@600;700;800&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/css/style.css">
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FinancialService",
+  "name": "Kiwi Financial Solutions",
+  "description": "Independent mortgage advisers in Auckland, New Zealand.",
+  "url": "https://kiwifinancial.co.nz/",
+  "logo": "https://kiwifinancial.co.nz/assets/images/logo@3x.png",
+  "image": "https://kiwifinancial.co.nz/assets/images/og-image.png",
+  "telephone": "+64273030000",
+  "email": "info@kiwifinancial.co.nz",
+  "areaServed": "Auckland, New Zealand",
+  "address": { "@type": "PostalAddress", "addressLocality": "Auckland", "addressCountry": "NZ" },
+  "aggregateRating": { "@type": "AggregateRating", "ratingValue": "5.0", "reviewCount": "87" }
+}
+</script>
+</head>
+
+<body>
+<a class="skip-link" href="#main">Skip to content</a>
+<div data-component="header"></div>
+
+<noscript>
+  <div class="wrap" style="padding:20px 0">
+    <img src="assets/images/logo@2x.png" width="160" alt="Kiwi Financial Solutions - Auckland Mortgage Advisers">
+    <p><a href="apply.html">Apply Now</a> &middot; <a href="services/index.html">Services</a> &middot;
+       <a href="tools/repayment-calculator.html">Calculators</a> &middot; <a href="about.html">About</a> &middot;
+       <a href="contact.html">Contact</a> &middot; <a href="tel:+64273030000">027 303 0000</a></p>
+  </div>
+</noscript>
+
+<main id="main">
+
+  <!-- 1 ------------------------------------------------------------- HERO -->
+  <section class="hero hero--full">
+    <div class="hero__mesh" aria-hidden="true"></div>
+    <div class="hero__glow" aria-hidden="true"></div>
+    <div class="hero__grid-lines" aria-hidden="true"></div>
+
+    <div class="wrap">
+      <div class="hero__inner">
+        <div>
+          <span class="eyebrow" data-reveal>Auckland &middot; 100% Independent</span>
+          <h1 data-reveal="60">Your dream home.<br><span class="grad">Your best mortgage rate.</span></h1>
+          <p class="hero__sub" data-reveal="140">Auckland's independent mortgage advisers &mdash; we compare 15+ lenders
+            so you get the best deal, not just any deal. It costs you nothing.</p>
+
+          <div class="btn-row" data-reveal="200">
+            <a class="btn btn--cta" href="apply.html">Apply Now <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+            <a class="btn btn--ghost" href="#calculator">Calculate My Repayments</a>
+          </div>
+
+          <div class="trust-badge" data-reveal="260">
+            <span class="dot" aria-hidden="true"></span>
+            100% Independent &nbsp;&middot;&nbsp; No Bank Ties &nbsp;&middot;&nbsp; Free Advice
+          </div>
+        </div>
+
+        <!-- Live comparison panel: the hero visual is data, not stock photography -->
+        <div class="hero__media" data-reveal="200" style="display:block">
+          <div class="glass hero-rates" id="heroRates">
+            <div class="hero-rates__head">
+              <strong>Live lender comparison</strong>
+              <span class="hero-rates__live"><i class="live-dot" aria-hidden="true"></i><span id="heroRatesStamp">loading&hellip;</span></span>
+            </div>
+            <ul class="hero-rates__list" id="heroRatesList">
+              <li class="hero-rates__row"><span class="sk sk--chip"></span><span class="sk sk--text"></span><span class="sk sk--val"></span></li>
+              <li class="hero-rates__row"><span class="sk sk--chip"></span><span class="sk sk--text"></span><span class="sk sk--val"></span></li>
+              <li class="hero-rates__row"><span class="sk sk--chip"></span><span class="sk sk--text"></span><span class="sk sk--val"></span></li>
+            </ul>
+            <div class="hero-rates__foot">
+              <span class="hero-rates__caption" id="heroSaveLabel">Compare the market in one conversation</span>
+              <div class="hero-rates__save" id="heroSpread"></div>
+              <p class="hero-rates__note">Indicative advertised special rates. Lending criteria apply.</p>
+            </div>
+          </div>
+
+          <div class="hero__float hero__float--a">
+            <span class="ic"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></span>
+            <span><small>Pre-approvals</small><strong>in 48 hours</strong></span>
+          </div>
+          <div class="hero__float hero__float--b">
+            <span class="ic"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2 15 9l7 .6-5.3 4.6 1.6 6.8L12 17.4 5.7 21l1.6-6.8L2 9.6 9 9z"/></svg></span>
+            <span><small>Google rating</small><strong>5.0 from 87</strong></span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <a class="scroll-cue" href="#rates" aria-label="Scroll to today's rates">
+      Scroll
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M12 5v14M6 13l6 6 6-6"/></svg>
+    </a>
+  </section>
+
+  <!-- 2 ----------------------------------------------------- RATES TICKER -->
+  <section class="rates" id="rates" aria-label="Today's indicative rates">
+    <div class="wrap">
+      <div class="rates__head">
+        <h2 class="rates__title"><i class="live-dot" aria-hidden="true"></i> Today&rsquo;s best rates</h2>
+        <div class="rates__meta">Indicative 1-year fixed specials &middot; <span id="rateStamp">loading&hellip;</span></div>
+        <a class="link-arrow" href="tools/rates.html">See all rates &amp; compare
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+      </div>
+      <div class="ticker" id="rateTicker"></div>
+    </div>
+  </section>
+
+  <!-- 3 ------------------------------------------------------- CALCULATOR -->
+  <section class="section" id="calculator">
+    <div class="wrap">
+      <div class="section-head" data-reveal>
+        <span class="eyebrow">Repayment calculator</span>
+        <h2>What will your repayments be?</h2>
+        <p>Move the sliders to see your real numbers &mdash; updated instantly, no email required.</p>
+      </div>
+
+      <div class="glass calc" data-calc="repayment" data-reveal="80"
+           style="background:linear-gradient(150deg,rgba(244,248,251,.92),rgba(255,255,255,.96));border-color:var(--line)">
+        <div class="calc__inputs">
+          <div class="field">
+            <label for="priceText">Property price <span class="hint" id="depositPct">20.0% deposit</span></label>
+            <div class="input-money"><span class="prefix">$</span>
+              <input type="text" id="priceText" inputmode="numeric" aria-describedby="priceRange" value="950,000"></div>
+            <input type="range" id="priceRange" min="100000" max="5000000" step="10000" value="950000" aria-label="Property price">
+            <div class="range-ends"><span>$100k</span><span>$5M</span></div>
+          </div>
+
+          <div class="field">
+            <label for="depositText">Deposit <span class="hint">Cash + KiwiSaver</span></label>
+            <div class="input-money"><span class="prefix">$</span>
+              <input type="text" id="depositText" inputmode="numeric" value="190,000"></div>
+            <input type="range" id="depositRange" min="0" max="2000000" step="5000" value="190000" aria-label="Deposit amount">
+            <div class="range-ends"><span>$0</span><span>$2M</span></div>
+          </div>
+
+          <div class="field">
+            <label for="ratePicker">Rate term <span class="hint" id="rateSource">loading today&rsquo;s best rate&hellip;</span></label>
+            <select id="ratePicker" aria-label="Rate term"></select>
+          </div>
+
+          <div class="field">
+            <label for="rateText">Interest rate <span class="hint">% p.a.</span></label>
+            <div class="input-money has-suffix no-prefix"><span class="suffix-tag">%</span>
+              <input type="text" id="rateText" inputmode="decimal" value="4.89"></div>
+            <input type="range" id="rateRange" min="1" max="12" step="0.01" value="4.89" aria-label="Interest rate">
+            <div class="range-ends"><span>1%</span><span>12%</span></div>
+          </div>
+
+          <div class="field">
+            <label for="termText">Loan term <span class="hint">years</span></label>
+            <div class="input-money has-suffix no-prefix"><span class="suffix-tag">yrs</span>
+              <input type="text" id="termText" inputmode="numeric" value="30"></div>
+            <input type="range" id="termRange" min="5" max="30" step="1" value="30" aria-label="Loan term in years">
+            <div class="range-ends"><span>5 yrs</span><span>30 yrs</span></div>
+          </div>
+
+          <div class="field">
+            <label id="freqLabel">Repayment frequency</label>
+            <div class="toggle-row" role="radiogroup" aria-labelledby="freqLabel">
+              <input type="radio" name="freq" id="fw" value="weekly"><label for="fw">Weekly</label>
+              <input type="radio" name="freq" id="ff" value="fortnightly" checked><label for="ff">Fortnightly</label>
+              <input type="radio" name="freq" id="fm" value="monthly"><label for="fm">Monthly</label>
+            </div>
+          </div>
+
+          <p class="disclaimer" id="lvrNote" hidden></p>
+        </div>
+
+        <div class="calc__results">
+          <div class="result-hero">
+            <small>Your repayment</small>
+            <div class="amount" id="outPayment">$0.00</div>
+            <div class="per" id="outFreq">per fortnight</div>
+          </div>
+
+          <div class="chart-box"><canvas id="chartSplit" role="img" aria-label="Doughnut chart of principal versus interest"></canvas></div>
+          <div class="legend">
+            <span><i style="background:#1A3C5E"></i>Principal <b id="legendPrincipal"></b></span>
+            <span><i style="background:#FF6B35"></i>Interest <b id="legendInterest"></b></span>
+          </div>
+
+          <div class="result-rows">
+            <div class="result-row"><span>Loan amount</span><b id="outLoan">$0</b></div>
+            <div class="result-row"><span>Loan to value ratio (LVR)</span><b id="outLvr">0%</b></div>
+            <div class="result-row"><span>Total interest</span><b id="outInterest">$0</b></div>
+            <div class="result-row"><span>Total repaid</span><b id="outTotal">$0</b></div>
+          </div>
+
+          <a class="btn btn--cta btn--block" href="apply.html">Get a personalised rate &mdash; apply free</a>
+          <p class="disclaimer">Results are estimates only and do not constitute financial advice. Lending criteria apply.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 4 ---------------------------------------------------------- SERVICES -->
+  <section class="section section--light">
+    <div class="wrap">
+      <div class="section-head" data-reveal>
+        <span class="eyebrow">What we do</span>
+        <h2>Lending solutions for every stage</h2>
+        <p>One adviser, every lender, all your borrowing needs under one roof.</p>
+      </div>
+      <div class="grid grid-3" id="servicesGrid"></div>
+    </div>
+  </section>
+
+  <!-- 5 ------------------------------------------------------ HOW IT WORKS -->
+  <section class="section">
+    <div class="wrap">
+      <div class="section-head" data-reveal>
+        <span class="eyebrow">How it works</span>
+        <h2>Three steps to sorted</h2>
+        <p>No jargon, no runaround. We handle the lenders so you can get on with life.</p>
+      </div>
+
+      <ol class="steps">
+        <li class="step" data-reveal>
+          <div class="step__num"><svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6M9 13h6M9 17h4"/></svg></div>
+          <span class="step__badge">1</span>
+          <h3>Tell us what you need</h3>
+          <p>A quick online application or a 15-minute chat &mdash; in person, by video, or over the phone.</p>
+        </li>
+        <li class="step" data-reveal="120">
+          <div class="step__num"><svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg></div>
+          <span class="step__badge">2</span>
+          <h3>We compare 15+ lenders</h3>
+          <p>We shop your deal across the main banks and non-bank lenders, then explain the trade-offs in plain English.</p>
+        </li>
+        <li class="step" data-reveal="240">
+          <div class="step__num"><svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="m11 17 2 2 4-4"/><path d="M3 10h4l3-3 4 4 3-3h4"/><path d="M3 10v7a2 2 0 0 0 2 2h3"/></svg></div>
+          <span class="step__badge">3</span>
+          <h3>We manage it to settlement</h3>
+          <p>Paperwork, lender questions, solicitor coordination &mdash; we drive the process right through to your keys.</p>
+        </li>
+      </ol>
+
+      <div class="btn-row" style="justify-content:center;margin-top:44px" data-reveal>
+        <a class="btn btn--cta" href="apply.html">Start your application</a>
+        <a class="btn btn--outline" href="tel:+64273030000">Talk to an adviser</a>
+      </div>
+      <p class="trust-row" style="justify-content:center;margin-top:22px">
+        <span data-tick>No credit check to enquire</span>
+        <span data-tick>Free service</span>
+        <span data-tick>100% independent</span>
+      </p>
+    </div>
+  </section>
+
+  <!-- 6 ------------------------------------------------------------- STATS -->
+  <section class="section section--dark section--tight">
+    <div class="wrap">
+      <div class="stats">
+        <div class="stat" data-reveal>
+          <div class="stat__val"><span data-count="15">0</span><span class="suffix">+</span></div>
+          <div class="stat__label">Lenders compared</div>
+        </div>
+        <div class="stat" data-reveal="100">
+          <div class="stat__val"><span data-count="500">0</span><span class="suffix">+</span></div>
+          <div class="stat__label">Happy clients</div>
+        </div>
+        <div class="stat" data-reveal="200">
+          <div class="stat__val"><span class="suffix">$</span><span data-count="200">0</span><span class="suffix">M+</span></div>
+          <div class="stat__label">Loans settled</div>
+        </div>
+        <div class="stat" data-reveal="300">
+          <div class="stat__val"><span data-count="10">0</span><span class="suffix">+</span></div>
+          <div class="stat__label">Years experience</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 6b ------------------------------------------------------ TEAM TEASER -->
+  <section class="section">
+    <div class="wrap">
+      <div class="section-head" data-reveal>
+        <span class="eyebrow">Our advisers</span>
+        <h2>The people behind your mortgage</h2>
+        <p>Experienced, independent advisers who work for you &mdash; not the banks.</p>
+      </div>
+
+      <div class="team-grid" data-team="teaser" style="max-width:860px;margin-inline:auto"></div>
+
+      <div class="btn-row" style="justify-content:center;margin-top:40px" data-reveal>
+        <a class="btn btn--outline" href="about.html#team">Meet our full team
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+        <a class="btn btn--cta" href="apply.html">Get free advice</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- 7 ------------------------------------------------------ LENDER LOGOS -->
+  <section class="section section--tight">
+    <div class="wrap">
+      <div class="section-head" data-reveal style="margin-bottom:32px">
+        <span class="eyebrow">Independence in action</span>
+        <h2 style="font-size:clamp(1.4rem,2.6vw,1.9rem)">Lenders we compare</h2>
+      </div>
+    </div>
+    <div class="marquee" id="lenderMarquee"><div class="marquee__track" id="lenderTrack"></div></div>
+  </section>
+
+  <!-- 8 ------------------------------------------------------ TESTIMONIALS -->
+  <section class="section section--light">
+    <div class="wrap">
+      <div class="section-head" data-reveal>
+        <span class="eyebrow">Social proof</span>
+        <div class="rating-line"><span class="stars" aria-hidden="true">&#9733;&#9733;&#9733;&#9733;&#9733;</span>
+          <strong style="font-family:var(--font-num);font-size:1.3rem;color:var(--primary)">5.0</strong>
+          <span style="color:var(--muted);font-size:.92rem">from 87 Google reviews</span></div>
+        <h2>Kiwis we&rsquo;ve helped get sorted</h2>
+      </div>
+
+      <div class="tcards" data-carousel>
+        <article class="tcard" data-reveal>
+          <span class="stars" aria-label="5 out of 5 stars">&#9733;&#9733;&#9733;&#9733;&#9733;</span>
+          <p>&ldquo;We&rsquo;d been declined by our own bank and had given up. Kiwi Financial found us a lender in under a week and we settled on our first home a month later. Genuinely life-changing.&rdquo;</p>
+          <div class="tcard__who"><span class="avatar" aria-hidden="true">SM</span>
+            <span><b>Sarah &amp; Mark</b><small>First home buyers &middot; Papakura</small></span></div>
+        </article>
+        <article class="tcard" data-reveal="120">
+          <span class="stars" aria-label="5 out of 5 stars">&#9733;&#9733;&#9733;&#9733;&#9733;</span>
+          <p>&ldquo;My fixed rate was rolling off and the bank offered me their carded rate. Kiwi Financial got me 0.45% lower plus cash back. Took them two days. I&rsquo;m $4,000 a year better off.&rdquo;</p>
+          <div class="tcard__who"><span class="avatar" aria-hidden="true">RP</span>
+            <span><b>Raj P.</b><small>Refinance &middot; Mount Roskill</small></span></div>
+        </article>
+        <article class="tcard" data-reveal="240">
+          <span class="stars" aria-label="5 out of 5 stars">&#9733;&#9733;&#9733;&#9733;&#9733;</span>
+          <p>&ldquo;Construction lending is a nightmare to arrange yourself. They structured the progressive drawdowns, dealt with the builder&rsquo;s paperwork and kept everything on schedule.&rdquo;</p>
+          <div class="tcard__who"><span class="avatar" aria-hidden="true">HT</span>
+            <span><b>Hine T.</b><small>New build &middot; Flat Bush</small></span></div>
+        </article>
+      </div>
+      <div class="carousel-dots" data-carousel-dots role="tablist" aria-label="Testimonials"></div>
+
+      <p style="text-align:center;margin-top:26px">
+        <a class="link-arrow" href="https://www.google.com/search?q=Kiwi+Financial+Solutions+Auckland" target="_blank" rel="noopener noreferrer">Read more reviews on Google
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+      </p>
+    </div>
+  </section>
+
+  <!-- 9 ----------------------------------------------------- ABOUT TEASER -->
+  <section class="section">
+    <div class="wrap split">
+      <div class="split__media" data-reveal>
+        <div style="background:linear-gradient(155deg,var(--primary),var(--dark));border-radius:var(--r-xl);padding:40px;color:#fff;box-shadow:var(--shadow-lg)">
+          <img src="assets/images/logo@3x.png" width="180" style="width:180px;border-radius:12px;margin-bottom:28px"
+               alt="Kiwi Financial Solutions - Auckland Mortgage Advisers">
+          <p style="color:#b9c2d6;font-size:1.02rem">We started Kiwi Financial Solutions because too many Kiwis were
+            accepting whatever their bank offered. Being adviser-owned means our only loyalty is to you.</p>
+          <div style="display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-top:28px">
+            <div style="background:rgba(255,255,255,.07);border:1px solid rgba(255,255,255,.12);border-radius:16px;padding:18px">
+              <div style="font-family:var(--font-num);font-size:1.6rem;font-weight:700">0</div>
+              <div class="mini-stat__label" style="color:#a9b3c9">Bank shareholders</div>
+            </div>
+            <div style="background:rgba(255,255,255,.07);border:1px solid rgba(255,255,255,.12);border-radius:16px;padding:18px">
+              <div style="font-family:var(--font-num);font-size:1.6rem;font-weight:700">$0</div>
+              <div class="mini-stat__label" style="color:#a9b3c9">Cost to you</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div data-reveal="120">
+        <span class="eyebrow">Why Kiwi Financial?</span>
+        <h2>Independent advice, actually independent</h2>
+        <ul class="ticks" id="whyList"></ul>
+        <div class="btn-row">
+          <a class="btn btn--outline" href="about.html">Meet our team</a>
+          <a class="btn btn--cta" href="apply.html">Apply now</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 10 -------------------------------------------------------- CTA BAND -->
+  <section class="section cta-band">
+    <div class="wrap">
+      <span class="eyebrow" data-reveal>Free &middot; No obligation</span>
+      <h2 data-reveal="80">Ready to get started? It costs nothing to ask.</h2>
+      <p data-reveal="140">Tell us what you&rsquo;re trying to do and we&rsquo;ll tell you honestly whether we can help &mdash; usually within one business day.</p>
+      <div class="btn-row" data-reveal="200">
+        <a class="btn btn--cta" href="apply.html">Apply Now</a>
+        <a class="btn btn--ghost" href="tel:+64273030000">Call 027 303 0000</a>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<div data-component="footer"></div>
+
+<script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.1/dist/chart.umd.min.js" defer></script>
+<script src="assets/js/config.js"></script>
+<script src="assets/js/analytics.js" defer></script>
+<script src="assets/js/site.js" defer></script>
+<script src="assets/js/rates.js" defer></script>
+<script src="assets/js/calculators.js" defer></script>
+<script src="assets/js/home.js" defer></script>
+</body>
+</html>

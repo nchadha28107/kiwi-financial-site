@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en-NZ" data-root="../" data-page="admin">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Lead Dashboard | Kiwi Financial Solutions</title>
+<meta name="description" content="Internal lead and conversion dashboard for the Kiwi Financial Solutions team.">
+<meta name="robots" content="noindex,nofollow,noarchive">
+<meta name="theme-color" content="#0C0634">
+<meta property="og:image" content="https://kiwifinancial.co.nz/assets/images/og-image.png">
+<link rel="icon" href="../favicon.ico" sizes="any">
+<link rel="apple-touch-icon" href="../assets/images/apple-touch-icon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Plus+Jakarta+Sans:wght@600;700;800&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../assets/css/style.css">
+</head>
+
+<body data-no-cro>
+<a class="skip-link" href="#main">Skip to content</a>
+
+<header class="site-header">
+  <nav class="navbar" aria-label="Admin">
+    <div class="wrap navbar__inner">
+      <a class="logo-link" href="../index.html" aria-label="Kiwi Financial Solutions - home">
+        <img src="../assets/images/logo.png"
+             srcset="../assets/images/logo.png 1x, ../assets/images/logo@2x.png 2x, ../assets/images/logo@3x.png 3x"
+             width="200" height="104" style="width:150px"
+             alt="Kiwi Financial Solutions - Auckland Mortgage Advisers">
+      </a>
+      <span class="nav-proof" style="margin-left:auto">Internal dashboard</span>
+      <button class="btn btn--outline btn--sm" type="button" id="signOut" hidden>Sign out</button>
+    </div>
+  </nav>
+</header>
+
+<main id="main">
+
+  <!-- GATE -->
+  <section class="section" id="gate">
+    <div class="wrap" style="max-width:440px">
+      <div class="wizard__main">
+        <span class="eyebrow">Restricted</span>
+        <h1 style="font-size:clamp(1.5rem,3vw,2rem)">Team sign in</h1>
+        <p style="color:var(--muted)">Enter the dashboard token to load lead data.</p>
+        <form id="gateForm" novalidate>
+          <div class="field" style="margin-bottom:18px">
+            <label for="token">Dashboard token</label>
+            <input class="txt" type="password" id="token" autocomplete="current-password" required>
+            <p class="err">That token was not accepted.</p>
+          </div>
+          <button class="btn btn--cta btn--block" type="submit">Unlock dashboard</button>
+        </form>
+        <div class="nudge" style="margin-top:22px">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><circle cx="12" cy="12" r="9"/><path d="M12 8v5M12 16h.01"/></svg>
+          <span>This token is checked by the server, but it is <b>not</b> a substitute for proper access
+            control. Keep this route behind your host&rsquo;s password protection as well.</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- DASHBOARD -->
+  <section class="section" id="board" hidden>
+    <div class="wrap">
+      <div class="rates__head" style="margin-bottom:24px">
+        <h1 style="font-size:clamp(1.5rem,3vw,2rem);margin:0">Lead dashboard</h1>
+        <div class="rates__meta" id="boardMeta"></div>
+      </div>
+
+      <div id="notConfigured" class="nudge" hidden style="margin-bottom:26px">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><circle cx="12" cy="12" r="9"/><path d="M12 8v5M12 16h.01"/></svg>
+        <span>No lead store is connected yet. Set <code>SHEETS_READ_URL</code> on the server and the cards
+          below will fill from your Google Sheet.</span>
+      </div>
+
+      <div class="grid grid-3" style="margin-bottom:32px">
+        <div class="card card--flat">
+          <span class="eyebrow">This week</span>
+          <div class="result-rows" style="border:0">
+            <div class="result-row" style="padding:10px 0"><span>Applications</span><b id="wkApps">&ndash;</b></div>
+            <div class="result-row" style="padding:10px 0;background:transparent"><span>Top goal</span><b id="wkGoal">&ndash;</b></div>
+          </div>
+        </div>
+        <div class="card card--flat">
+          <span class="eyebrow">This month</span>
+          <div class="result-rows" style="border:0">
+            <div class="result-row" style="padding:10px 0"><span>Applications</span><b id="moApps">&ndash;</b></div>
+            <div class="result-row" style="padding:10px 0;background:transparent"><span>Top goal</span><b id="moGoal">&ndash;</b></div>
+            <div class="result-row" style="padding:10px 0"><span>Average loan</span><b id="moAvg">&ndash;</b></div>
+          </div>
+        </div>
+        <div class="card card--flat">
+          <span class="eyebrow">All time</span>
+          <div class="result-rows" style="border:0">
+            <div class="result-row" style="padding:10px 0"><span>Applications</span><b id="allApps">&ndash;</b></div>
+            <div class="result-row" style="padding:10px 0;background:transparent"><span>Average loan</span><b id="allAvg">&ndash;</b></div>
+            <div class="result-row" style="padding:10px 0"><span>Top goal</span><b id="allGoal">&ndash;</b></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="grid grid-2" style="margin-bottom:32px">
+        <div class="card card--flat">
+          <h3>Applications per day</h3>
+          <div class="chart-box chart-box--tall"><canvas id="chartDaily" role="img" aria-label="Applications per day over the last 30 days"></canvas></div>
+        </div>
+        <div class="card card--flat">
+          <h3>Loan goal breakdown</h3>
+          <div class="chart-box chart-box--tall"><canvas id="chartGoals" role="img" aria-label="Breakdown of enquiries by loan goal"></canvas></div>
+        </div>
+        <div class="card card--flat">
+          <h3>Traffic source</h3>
+          <div class="chart-box"><canvas id="chartSources" role="img" aria-label="Enquiries by traffic source"></canvas></div>
+        </div>
+        <div class="card card--flat">
+          <h3>Form funnel</h3>
+          <div class="chart-box"><canvas id="chartFunnel" role="img" aria-label="Application funnel drop-off by step"></canvas></div>
+          <p class="disclaimer">Funnel steps come from GA4 events. Open GA4 &rarr; Reports &rarr; Engagement for
+            the authoritative numbers.</p>
+        </div>
+      </div>
+
+      <h3>Latest leads</h3>
+      <div class="table-wrap">
+        <table class="amort">
+          <caption class="sr-only">Most recent enquiries</caption>
+          <thead><tr>
+            <th scope="col">When</th><th scope="col">Name</th><th scope="col">Phone</th>
+            <th scope="col">Goal</th><th scope="col">Loan</th><th scope="col">LVR</th><th scope="col">Source</th>
+          </tr></thead>
+          <tbody id="leadRows"><tr><td colspan="7">No leads yet.</td></tr></tbody>
+        </table>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.1/dist/chart.umd.min.js" defer></script>
+<script src="../assets/js/config.js"></script>
+<script src="../assets/js/site.js" defer></script>
+<script src="../assets/js/admin.js" defer></script>
+</body>
+</html>

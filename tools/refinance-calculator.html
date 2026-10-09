@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en-NZ" data-root="../" data-page="tools">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Refinance Savings Calculator NZ | Kiwi Financial Solutions</title>
+<meta name="description" content="See how much you could save by refinancing your NZ mortgage. Compare your current rate against today's best rate, including break fees and break-even period.">
+<link rel="canonical" href="https://kiwifinancial.co.nz/tools/refinance-calculator.html">
+<meta name="theme-color" content="#0C0634">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Refinance Savings Calculator NZ | Kiwi Financial Solutions">
+<meta property="og:description" content="Find out what switching lenders could save you - including break fees and break-even point.">
+<meta property="og:image" content="https://kiwifinancial.co.nz/assets/images/og-image.png">
+<link rel="icon" href="../favicon.ico" sizes="any">
+<link rel="apple-touch-icon" href="../assets/images/apple-touch-icon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Plus+Jakarta+Sans:wght@600;700;800&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../assets/css/style.css">
+</head>
+
+<body>
+<a class="skip-link" href="#main">Skip to content</a>
+<div data-component="header"></div>
+<noscript><div class="wrap" style="padding:20px 0"><img src="../assets/images/logo@2x.png" width="160" alt="Kiwi Financial Solutions - Auckland Mortgage Advisers"><p><a href="../index.html">Home</a> &middot; <a href="../apply.html">Apply</a> &middot; <a href="tel:+64273030000">027 303 0000</a></p></div></noscript>
+
+<main id="main">
+
+  <section class="hero page-hero">
+    <div class="hero__mesh" aria-hidden="true"></div>
+    <div class="wrap">
+      <div class="page-hero__inner">
+        <div>
+          <nav class="breadcrumb" aria-label="Breadcrumb">
+            <a href="../index.html">Home</a><span>/</span><a href="index.html">Tools</a><span>/</span><span>Refinance calculator</span>
+          </nav>
+          <h1>Refinance savings calculator</h1>
+          <p>Rolling off a fixed rate? See what moving lenders could be worth &mdash; after break fees, legal costs
+            and cash contributions.</p>
+          <div class="btn-row" style="margin-top:26px">
+            <a class="btn btn--cta" href="../apply.html">Get my refinance quote</a>
+            <a class="btn btn--ghost" href="#calc">Jump to calculator</a>
+          </div>
+          <p class="trust-row" style="margin-top:22px">
+            <span data-tick>No credit check to enquire</span>
+            <span data-tick>Free service</span>
+            <span data-tick>100% independent</span>
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="calc">
+    <div class="wrap">
+      <div class="glass calc" data-calc="refinance"
+           style="background:linear-gradient(150deg,rgba(244,248,251,.92),rgba(255,255,255,.96));border-color:var(--line)">
+        <div class="calc__inputs">
+          <div class="field">
+            <label for="rfBalanceText">Current loan balance</label>
+            <div class="input-money"><span class="prefix">$</span>
+              <input type="text" id="rfBalanceText" inputmode="numeric" value="620,000"></div>
+            <input type="range" id="rfBalanceRange" min="50000" max="3000000" step="5000" value="620000" aria-label="Current loan balance">
+            <div class="range-ends"><span>$50k</span><span>$3M</span></div>
+          </div>
+
+          <div class="field">
+            <label for="rfCurrentText">Your current interest rate <span class="hint">% p.a.</span></label>
+            <div class="input-money has-suffix no-prefix"><span class="suffix-tag">%</span>
+              <input type="text" id="rfCurrentText" inputmode="decimal" value="6.45"></div>
+            <input type="range" id="rfCurrentRange" min="1" max="12" step="0.01" value="6.45" aria-label="Current interest rate">
+            <div class="range-ends"><span>1%</span><span>12%</span></div>
+          </div>
+
+          <div class="field">
+            <label for="rfTermText">Remaining term <span class="hint">years</span></label>
+            <div class="input-money has-suffix no-prefix"><span class="suffix-tag">yrs</span>
+              <input type="text" id="rfTermText" inputmode="numeric" value="25"></div>
+            <input type="range" id="rfTermRange" min="1" max="30" step="1" value="25" aria-label="Remaining term in years">
+            <div class="range-ends"><span>1 yr</span><span>30 yrs</span></div>
+          </div>
+
+          <div class="field">
+            <label for="rfNewText">New interest rate <span class="hint">Pre-filled with today&rsquo;s best</span></label>
+            <div class="input-money has-suffix no-prefix"><span class="suffix-tag">%</span>
+              <input type="text" id="rfNewText" inputmode="decimal" value="4.89"></div>
+            <input type="range" id="rfNewRange" min="1" max="12" step="0.01" value="4.89" aria-label="New interest rate">
+            <div class="range-ends"><span>1%</span><span>12%</span></div>
+          </div>
+
+          <div class="field">
+            <label for="rfFeeText">Break fees &amp; switching costs</label>
+            <div class="input-money"><span class="prefix">$</span>
+              <input type="text" id="rfFeeText" inputmode="numeric" value="2,500"></div>
+            <input type="range" id="rfFeeRange" min="0" max="30000" step="100" value="2500" aria-label="Break fees and switching costs">
+            <div class="range-ends"><span>$0</span><span>$30k</span></div>
+            <p class="field-note">Include break costs, discharge fees and legal fees. Many lenders offer a cash
+              contribution that offsets these &mdash; we negotiate that for you.</p>
+          </div>
+        </div>
+
+        <div class="calc__results">
+          <div class="result-hero">
+            <small>You could save</small>
+            <div class="amount" id="rfMonthly">$0.00</div>
+            <div class="per">per month</div>
+          </div>
+
+          <div class="result-rows">
+            <div class="result-row"><span>Current monthly repayment</span><b id="rfOldPay">$0</b></div>
+            <div class="result-row"><span>New monthly repayment</span><b id="rfNewPay">$0</b></div>
+            <div class="result-row"><span>Annual saving</span><b id="rfAnnual">$0</b></div>
+            <div class="result-row"><span>Interest saved over the term</span><b id="rfInterestSaved">$0</b></div>
+            <div class="result-row"><span>Total saving after costs</span><b id="rfLifetime">$0</b></div>
+            <div class="result-row"><span>Break-even on switching costs</span><b id="rfBreakEven">&ndash;</b></div>
+          </div>
+
+          <p id="rfVerdict" class="nudge"></p>
+          <a class="btn btn--cta btn--block" href="../apply.html">Want this rate? Apply free &rarr;</a>
+        </div>
+
+        <div style="grid-column:1/-1">
+          <h3 style="margin-bottom:16px">Old loan vs new loan</h3>
+          <div class="chart-box chart-box--tall"><canvas id="rfChart" role="img" aria-label="Bar chart comparing total interest and total repaid before and after refinancing"></canvas></div>
+          <p class="disclaimer" style="margin-top:18px">Results are estimates only and do not constitute financial advice.
+            Comparisons assume the same remaining term and a constant rate for the full term. Lending criteria apply.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section section--light">
+    <div class="wrap">
+      <div class="section-head" data-reveal>
+        <span class="eyebrow">Before you switch</span>
+        <h2>Three things that change the answer</h2>
+      </div>
+      <div class="grid grid-3">
+        <article class="card" data-reveal>
+          <h3>Cash contributions</h3>
+          <p>Lenders commonly offer around 0.6&ndash;0.9% of the loan as a cash contribution for new business. On a $620k
+            loan that can more than cover your break fees.</p>
+        </article>
+        <article class="card" data-reveal="100">
+          <h3>Clawback periods</h3>
+          <p>Cash contributions usually come with a 3&ndash;4 year clawback. If you might sell soon, the maths changes.
+            We&rsquo;ll flag it before you commit.</p>
+        </article>
+        <article class="card" data-reveal="200">
+          <h3>Don&rsquo;t reset to 30 years</h3>
+          <p>Refinancing back to a fresh 30-year term lowers your payment but can cost more overall. Keeping your existing
+            end date is usually the smarter move.</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section class="section cta-band">
+    <div class="wrap">
+      <h2>Let&rsquo;s see if you can do better.</h2>
+      <p>Send us your current rate and balance. We&rsquo;ll tell you honestly whether switching is worth it &mdash; even if the answer is no.</p>
+      <div class="btn-row">
+        <a class="btn btn--cta" href="../apply.html">Apply now for free</a>
+        <a class="btn btn--ghost" href="tel:+64273030000">Call 027 303 0000</a>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<div data-component="footer"></div>
+<script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.1/dist/chart.umd.min.js" defer></script>
+<script src="../assets/js/config.js"></script>
+<script src="../assets/js/analytics.js" defer></script>
+<script src="../assets/js/site.js" defer></script>
+<script src="../assets/js/calculators.js" defer></script>
+</body>
+</html>

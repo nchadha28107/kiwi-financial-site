@@ -1,0 +1,14 @@
+# OS / editor noise
+.DS_Store
+Thumbs.db
+desktop.ini
+.vscode/
+*.log
+
+# Node
+node_modules/
+
+# Secrets - API keys belong in host environment variables, never in the repo
+.env
+.env.*
+!.env.example

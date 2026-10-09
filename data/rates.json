@@ -1,0 +1,139 @@
+{
+  "last_updated": "2026-10-10T08:00:00+13:00",
+  "source": "manual",
+  "note": "Indicative advertised special rates. Specials generally require at least the stated minimum equity. Cash contribution is indicative and subject to clawback. Update via tools-build/update-rates.js.",
+  "rates": [
+    {
+      "bank": "ANZ",
+      "slug": "anz",
+      "floating": 6.59,
+      "fixed_6m": 5.05,
+      "fixed_1y": 4.99,
+      "fixed_2y": 4.99,
+      "fixed_3y": 5.25,
+      "fixed_5y": 5.69,
+      "cash_contribution_pct": 0.8,
+      "min_equity_pct": 20
+    },
+    {
+      "bank": "ASB",
+      "slug": "asb",
+      "floating": 6.49,
+      "fixed_6m": 4.99,
+      "fixed_1y": 4.95,
+      "fixed_2y": 4.95,
+      "fixed_3y": 5.19,
+      "fixed_5y": 5.59,
+      "cash_contribution_pct": 0.85,
+      "min_equity_pct": 20
+    },
+    {
+      "bank": "BNZ",
+      "slug": "bnz",
+      "floating": 6.49,
+      "fixed_6m": 4.99,
+      "fixed_1y": 4.95,
+      "fixed_2y": 4.95,
+      "fixed_3y": 5.19,
+      "fixed_5y": 5.59,
+      "cash_contribution_pct": 0.8,
+      "min_equity_pct": 20
+    },
+    {
+      "bank": "Westpac",
+      "slug": "westpac",
+      "floating": 6.59,
+      "fixed_6m": 5.09,
+      "fixed_1y": 4.99,
+      "fixed_2y": 4.99,
+      "fixed_3y": 5.29,
+      "fixed_5y": 5.69,
+      "cash_contribution_pct": 0.8,
+      "min_equity_pct": 20
+    },
+    {
+      "bank": "Kiwibank",
+      "slug": "kiwibank",
+      "floating": 6.5,
+      "fixed_6m": 4.95,
+      "fixed_1y": 4.89,
+      "fixed_2y": 4.95,
+      "fixed_3y": 5.15,
+      "fixed_5y": 5.55,
+      "cash_contribution_pct": 0.7,
+      "min_equity_pct": 20
+    },
+    {
+      "bank": "TSB",
+      "slug": "tsb",
+      "floating": 6.59,
+      "fixed_6m": 4.99,
+      "fixed_1y": 4.95,
+      "fixed_2y": 4.99,
+      "fixed_3y": 5.25,
+      "fixed_5y": 5.65,
+      "cash_contribution_pct": 0.75,
+      "min_equity_pct": 20
+    },
+    {
+      "bank": "SBS Bank",
+      "slug": "sbs",
+      "floating": 6.45,
+      "fixed_6m": 4.95,
+      "fixed_1y": 4.89,
+      "fixed_2y": 4.95,
+      "fixed_3y": 5.19,
+      "fixed_5y": 5.59,
+      "cash_contribution_pct": 0.7,
+      "min_equity_pct": 20
+    },
+    {
+      "bank": "The Co-operative Bank",
+      "slug": "cooperative",
+      "floating": 6.45,
+      "fixed_6m": 4.95,
+      "fixed_1y": 4.89,
+      "fixed_2y": 4.95,
+      "fixed_3y": 5.19,
+      "fixed_5y": 5.59,
+      "cash_contribution_pct": 0.65,
+      "min_equity_pct": 20
+    },
+    {
+      "bank": "Heartland Bank",
+      "slug": "heartland",
+      "floating": 6.69,
+      "fixed_6m": 5.19,
+      "fixed_1y": 5.05,
+      "fixed_2y": 5.09,
+      "fixed_3y": 5.35,
+      "fixed_5y": null,
+      "cash_contribution_pct": 0,
+      "min_equity_pct": 30
+    },
+    {
+      "bank": "ICBC New Zealand",
+      "slug": "icbc",
+      "floating": 6.35,
+      "fixed_6m": 4.95,
+      "fixed_1y": 4.85,
+      "fixed_2y": 4.89,
+      "fixed_3y": 5.15,
+      "fixed_5y": 5.55,
+      "cash_contribution_pct": 0.8,
+      "min_equity_pct": 20
+    },
+    {
+      "bank": "Bank of China NZ",
+      "slug": "boc",
+      "floating": 6.39,
+      "fixed_6m": 4.95,
+      "fixed_1y": 4.85,
+      "fixed_2y": 4.89,
+      "fixed_3y": 5.15,
+      "fixed_5y": 5.55,
+      "cash_contribution_pct": 0.8,
+      "min_equity_pct": 20
+    }
+  ]
+}

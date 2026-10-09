@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en-NZ" data-root="../" data-page="tools">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Free Mortgage Calculators NZ | Kiwi Financial Solutions</title>
+<meta name="description" content="Free NZ mortgage tools from Kiwi Financial Solutions: repayment calculator, refinance savings calculator and amortisation schedule. No sign-up, no credit check.">
+<link rel="canonical" href="https://kiwifinancial.co.nz/tools/">
+<meta name="theme-color" content="#0C0634">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Free Mortgage Calculators NZ | Kiwi Financial Solutions">
+<meta property="og:description" content="Repayments, refinance savings and amortisation - all free, all instant.">
+<meta property="og:image" content="https://kiwifinancial.co.nz/assets/images/og-image.png">
+<link rel="icon" href="../favicon.ico" sizes="any">
+<link rel="apple-touch-icon" href="../assets/images/apple-touch-icon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Plus+Jakarta+Sans:wght@600;700;800&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../assets/css/style.css">
+</head>
+
+<body>
+<a class="skip-link" href="#main">Skip to content</a>
+<div data-component="header"></div>
+<noscript><div class="wrap" style="padding:20px 0"><img src="../assets/images/logo@2x.png" width="160" alt="Kiwi Financial Solutions - Auckland Mortgage Advisers"><p><a href="../index.html">Home</a> &middot; <a href="../apply.html">Apply</a> &middot; <a href="tel:+64273030000">027 303 0000</a></p></div></noscript>
+
+<main id="main">
+
+  <section class="hero page-hero">
+    <div class="hero__mesh" aria-hidden="true"></div>
+    <div class="wrap">
+      <div class="page-hero__inner">
+        <div>
+          <nav class="breadcrumb" aria-label="Breadcrumb">
+            <a href="../index.html">Home</a><span>/</span><span>Tools</span>
+          </nav>
+          <h1>Free mortgage calculators</h1>
+          <p>Run the numbers yourself before you talk to anyone. No email wall, no credit check, no sales call
+            unless you ask for one.</p>
+          <div class="btn-row" style="margin-top:26px">
+            <a class="btn btn--cta" href="../apply.html">Apply Now</a>
+            <a class="btn btn--ghost" href="repayment-calculator.html">Start with repayments</a>
+          </div>
+          <p class="trust-row" style="margin-top:22px">
+            <span data-tick>No credit check to enquire</span>
+            <span data-tick>Free service</span>
+            <span data-tick>100% independent</span>
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="wrap">
+      <div class="grid grid-3" id="toolsGrid"></div>
+    </div>
+  </section>
+
+  <section class="section section--light">
+    <div class="wrap">
+      <div class="section-head" data-reveal>
+        <span class="eyebrow">First home buyers</span>
+        <h2>Don&rsquo;t forget your KiwiSaver</h2>
+        <p>Most first home buyers can withdraw their KiwiSaver (less $1,000 and any Australian-sourced funds) toward a
+          first home after three years of membership. It is often the difference between an 85% and an 80% LVR.</p>
+      </div>
+      <div class="btn-row" style="justify-content:center">
+        <a class="btn btn--cta" href="../services/home-loans.html">First home buyer guide</a>
+        <a class="btn btn--outline" href="../contact.html">Ask us a question</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="section cta-band">
+    <div class="wrap">
+      <h2>Numbers look right? Let&rsquo;s make them real.</h2>
+      <p>We compare 15+ lenders and come back with the deal you actually qualify for.</p>
+      <div class="btn-row">
+        <a class="btn btn--cta" href="../apply.html">Apply now for free</a>
+        <a class="btn btn--ghost" href="tel:+64273030000">Call 027 303 0000</a>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<div data-component="footer"></div>
+<script src="../assets/js/config.js"></script>
+<script src="../assets/js/analytics.js" defer></script>
+<script src="../assets/js/site.js" defer></script>
+<script>
+document.addEventListener('kfs:ready', function () {
+  var I = window.KFS_ICONS;
+  var EXTRA = {
+    'repayment-calculator': 'Weekly, fortnightly or monthly repayments, LVR, total interest and a full amortisation table.',
+    'refinance-calculator': 'Compare your current rate to today\u2019s best, including break fees and break-even point.',
+    'amortisation-calculator': 'Year-by-year principal, interest and closing balance, plus a balance decline chart.'
+  };
+  document.getElementById('toolsGrid').innerHTML = window.KFS_TOOLS.map(function (t, i) {
+    return '<article class="card" data-reveal="' + i * 90 + '">' +
+      '<div class="card__icon">' + I[t.icon] + '</div>' +
+      '<h3>' + t.name + '</h3><p>' + EXTRA[t.slug] + '</p>' +
+      '<a class="btn btn--outline btn--sm" href="' + t.slug + '.html">Open calculator' + I.arrow + '</a></article>';
+  }).join('');
+  document.querySelectorAll('[data-reveal]:not(.in)').forEach(function (el) { el.classList.add('in'); });
+});
+</script>
+</body>
+</html>

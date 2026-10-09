@@ -1,0 +1,6 @@
+User-agent: *
+Allow: /
+Disallow: /apply.html
+Disallow: /admin/
+
+Sitemap: https://kiwifinancial.co.nz/sitemap.xml

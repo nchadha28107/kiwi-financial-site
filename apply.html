@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en-NZ" data-root="" data-page="apply">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Get Free Advice | Kiwi Financial Solutions</title>
+<meta name="description" content="Three quick steps and an adviser calls you back. No credit check, no obligation, no cost. Independent mortgage advice across Auckland.">
+<link rel="canonical" href="https://kiwifinancial.co.nz/apply.html">
+<meta name="theme-color" content="#0C0634">
+<meta name="robots" content="noindex,follow">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Get Free Advice | Kiwi Financial Solutions">
+<meta property="og:description" content="Under 90 seconds. No credit check. An adviser calls you back.">
+<meta property="og:image" content="https://kiwifinancial.co.nz/assets/images/og-image.png">
+<link rel="icon" href="favicon.ico" sizes="any">
+<link rel="apple-touch-icon" href="assets/images/apple-touch-icon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Plus+Jakarta+Sans:wght@600;700;800&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/css/style.css">
+</head>
+
+<body>
+<a class="skip-link" href="#main">Skip to content</a>
+<div data-component="header"></div>
+<noscript><div class="wrap" style="padding:20px 0"><img src="assets/images/logo@2x.png" width="160" alt="Kiwi Financial Solutions - Auckland Mortgage Advisers"><p>This form needs JavaScript. Please call <a href="tel:+64273030000">027 303 0000</a> or email <a href="mailto:info@kiwifinancial.co.nz">info@kiwifinancial.co.nz</a>.</p></div></noscript>
+
+<main id="main">
+
+  <section class="hero page-hero" style="padding-bottom:clamp(40px,5vw,60px)">
+    <div class="hero__mesh" aria-hidden="true"></div>
+    <div class="wrap">
+      <nav class="breadcrumb" aria-label="Breadcrumb"><a href="index.html">Home</a><span>/</span><span>Get free advice</span></nav>
+      <h1 style="margin-bottom:12px">Tell us what you need</h1>
+      <p>Three quick steps, about 90 seconds. Then an adviser calls you &mdash; no credit check, no obligation, no cost.</p>
+    </div>
+  </section>
+
+  <section class="section section--light">
+    <div class="wrap wizard">
+
+      <div class="wizard__main">
+        <div id="resumeBanner" class="resume" hidden>
+          <span>Welcome back &mdash; continue where you left off?</span>
+          <span class="resume__actions">
+            <button class="btn btn--accent btn--sm" type="button" id="resumeYes">Yes, continue</button>
+            <button class="btn btn--outline btn--sm" type="button" id="resumeNo">Start fresh</button>
+          </span>
+        </div>
+
+        <div id="wizardHead">
+          <ol class="stepper" id="stepper">
+            <li data-s="1"><button class="stepper__btn" type="button" disabled><span class="dot" aria-hidden="true"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></span><span class="lbl">Goal</span></button></li>
+            <li data-s="2"><button class="stepper__btn" type="button" disabled><span class="dot" aria-hidden="true"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></span><span class="lbl">Details</span></button></li>
+            <li data-s="3"><button class="stepper__btn" type="button" disabled><span class="dot" aria-hidden="true"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></span><span class="lbl">Contact</span></button></li>
+          </ol>
+          <p class="stepper__caption" id="stepCaption">Step 1 of 3</p>
+        </div>
+
+        <form id="leadWizard" novalidate>
+
+          <!-- STEP 1 ---------------------------------------------------- -->
+          <section class="step-panel active" data-step="1" aria-labelledby="s1h">
+            <h2 id="s1h" style="font-size:clamp(1.4rem,2.6vw,1.8rem);margin-bottom:6px">What are you looking for?</h2>
+            <p style="color:var(--muted);margin-bottom:24px">Tap one &mdash; we&rsquo;ll fine-tune it on the call.</p>
+            <div class="goal-grid" id="goalGrid"></div>
+          </section>
+
+          <!-- STEP 2 ---------------------------------------------------- -->
+          <section class="step-panel" data-step="2" aria-labelledby="s2h">
+            <h2 id="s2h" style="font-size:clamp(1.4rem,2.6vw,1.8rem);margin-bottom:6px">A few quick details</h2>
+            <p style="color:var(--muted);margin-bottom:28px">Rough numbers are fine. Nothing here is locked in.</p>
+            <div id="detailFields"></div>
+          </section>
+
+          <!-- STEP 3 ---------------------------------------------------- -->
+          <section class="step-panel" data-step="3" aria-labelledby="s3h">
+            <h2 id="s3h" style="font-size:clamp(1.4rem,2.6vw,1.8rem);margin-bottom:6px">How do we reach you?</h2>
+            <p style="color:var(--muted);margin-bottom:28px">Your name and phone number is all we need.</p>
+
+            <div class="form-grid">
+              <div class="field full">
+                <label for="leadName">Your name</label>
+                <input class="txt" type="text" id="leadName" name="name" autocomplete="name"
+                       autocapitalize="words" spellcheck="false" required>
+                <p class="err">Please enter your name.</p>
+              </div>
+
+              <div class="field full">
+                <label for="leadPhone">Phone number <span class="hint">mobile preferred</span></label>
+                <input type="tel" id="leadPhone" name="phone" autocomplete="tel" inputmode="tel"
+                       placeholder="021 123 4567" maxlength="13" required>
+                <p class="err">Please enter a valid NZ phone number.</p>
+              </div>
+
+              <div class="field full">
+                <label for="leadEmail">Email address <span class="hint">(optional &mdash; for a confirmation copy)</span></label>
+                <input type="email" id="leadEmail" name="email" autocomplete="email" inputmode="email">
+                <p class="err">That email address doesn&rsquo;t look right.</p>
+              </div>
+
+              <div class="pill-field full" style="margin-bottom:0">
+                <label id="callTimeLabel">Best time to call? <span class="hint">(optional)</span></label>
+                <div class="toggle-row" role="radiogroup" aria-labelledby="callTimeLabel">
+                  <input type="radio" name="callTime" id="ct1" value="Morning 8-12"><label for="ct1">Morning 8&ndash;12</label>
+                  <input type="radio" name="callTime" id="ct2" value="Afternoon 12-5"><label for="ct2">Afternoon 12&ndash;5</label>
+                  <input type="radio" name="callTime" id="ct3" value="Evening 5-7"><label for="ct3">Evening 5&ndash;7</label>
+                  <input type="radio" name="callTime" id="ct4" value="Anytime" checked><label for="ct4">Anytime</label>
+                </div>
+              </div>
+            </div>
+
+            <div id="submitSlot"></div>
+
+            <template id="submitTemplate">
+              <button class="btn btn--cta btn--block" type="submit" id="leadSubmit" style="margin-top:30px">
+                <span class="spinner" aria-hidden="true"></span>
+                <span id="submitLabel">&#128640;&nbsp; Get My Free Advice &rarr;</span>
+              </button>
+            </template>
+
+            <p class="fine-print">
+              <span aria-hidden="true">&#128274;</span>
+              <span>Your info is private. No credit check. No obligation.
+                <a href="legal/privacy.html">Privacy Policy</a></span>
+            </p>
+
+            <div class="form-error" id="formError" role="alert">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" style="flex:0 0 auto;margin-top:2px"><circle cx="12" cy="12" r="9"/><path d="M12 8v5M12 16h.01"/></svg>
+              <span>We couldn&rsquo;t send that just now &mdash; your answers are still here.
+                <button type="button" id="retryBtn">Try again</button>, or call
+                <a href="tel:+64273030000">027 303 0000</a>.</span>
+            </div>
+          </section>
+
+          <div class="wizard__nav" id="wizardNav" hidden>
+            <button class="btn btn--ghost btn--sm" type="button" id="btnBack">&larr; Back</button>
+            <button class="btn btn--cta" type="button" id="btnNext">Continue</button>
+          </div>
+        </form>
+
+        <!-- SUCCESS ---------------------------------------------------- -->
+        <div class="success" id="leadDone" hidden>
+          <div class="success__ring">
+            <svg width="46" height="46" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>
+          </div>
+          <h2 id="doneHeading">You&rsquo;re all set! &#127881;</h2>
+          <p style="color:var(--muted);max-width:44ch;margin-inline:auto" id="doneSub"></p>
+
+          <div class="contact-card">
+            <span class="avatar" style="width:52px;height:52px" aria-hidden="true">KF</span>
+            <span>
+              <b>Kiwi Financial Solutions</b>
+              <small>Independent mortgage advisers &middot; Auckland</small>
+              <a href="tel:+64273030000">Can&rsquo;t wait? Call 027 303 0000 &rarr;</a>
+            </span>
+          </div>
+
+          <div class="soft-links">
+            <a href="tools/repayment-calculator.html">While you wait, calculate your repayments</a>
+            <a href="index.html#rates">See today&rsquo;s best interest rates</a>
+            <a href="index.html">Back to home</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- SIDEBAR ----------------------------------------------------- -->
+      <aside class="wizard__aside">
+        <div class="aside-card">
+          <h3>Why people trust us</h3>
+          <ul class="ticks" id="asideTicks" style="gap:12px;margin:0"></ul>
+        </div>
+
+        <div class="aside-card quote">
+          <h3>Takes about 90 seconds</h3>
+          <p>We only ask what we need to make a useful first call. Everything else we&rsquo;ll cover together, properly,
+            when we talk.</p>
+          <a class="btn btn--accent btn--sm btn--block" href="tel:+64273030000" style="margin-top:6px">Call 027 303 0000</a>
+        </div>
+      </aside>
+
+    </div>
+  </section>
+
+</main>
+
+<div data-component="footer"></div>
+<script src="assets/js/config.js"></script>
+<script src="assets/js/analytics.js" defer></script>
+<script src="assets/js/site.js" defer></script>
+<script src="assets/js/lead-transport.js" defer></script>
+<script src="assets/js/apply.js" defer></script>
+</body>
+</html>

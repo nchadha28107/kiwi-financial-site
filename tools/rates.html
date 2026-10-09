@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en-NZ" data-root="../" data-page="tools">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Today's NZ Home Loan Rates | Kiwi Financial Solutions</title>
+<meta name="description" content="Compare today's advertised home loan rates across 11 New Zealand lenders - floating, 6 month, 1, 2, 3 and 5 year fixed. Updated regularly by Kiwi Financial Solutions.">
+<link rel="canonical" href="https://kiwifinancial.co.nz/tools/rates.html">
+<meta name="theme-color" content="#0C0634">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Today's NZ Home Loan Rates | Kiwi Financial Solutions">
+<meta property="og:description" content="Floating, 6 month, 1, 2, 3 and 5 year fixed rates across 11 NZ lenders.">
+<meta property="og:image" content="https://kiwifinancial.co.nz/assets/images/og-image.png">
+<link rel="icon" href="../favicon.ico" sizes="any">
+<link rel="apple-touch-icon" href="../assets/images/apple-touch-icon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Plus+Jakarta+Sans:wght@600;700;800&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../assets/css/style.css">
+</head>
+
+<body>
+<a class="skip-link" href="#main">Skip to content</a>
+<div data-component="header"></div>
+<noscript><div class="wrap" style="padding:20px 0"><img src="../assets/images/logo@2x.png" width="160" alt="Kiwi Financial Solutions - Auckland Mortgage Advisers"><p>Call <a href="tel:+64273030000">027 303 0000</a> for today's best rates.</p></div></noscript>
+
+<main id="main">
+
+  <section class="hero page-hero" style="padding-bottom:clamp(40px,5vw,60px)">
+    <div class="hero__mesh" aria-hidden="true"></div>
+    <div class="wrap">
+      <nav class="breadcrumb" aria-label="Breadcrumb">
+        <a href="../index.html">Home</a><span>/</span><a href="index.html">Tools</a><span>/</span><span>Rates</span>
+      </nav>
+      <h1 style="margin-bottom:12px">Today&rsquo;s home loan rates</h1>
+      <p>Advertised special rates across the lenders we compare. The sharpest rate on this table is not always the
+        best deal for you &mdash; structure, cash contributions and fees all matter.</p>
+      <div class="btn-row" style="margin-top:26px">
+        <a class="btn btn--cta" href="../apply.html">Get my actual rate</a>
+        <a class="btn btn--ghost" href="repayment-calculator.html">Calculate repayments</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="section section--tight">
+    <div class="wrap">
+      <div class="rates__head" style="margin-bottom:20px">
+        <h2 style="font-size:clamp(1.3rem,2.4vw,1.7rem);margin:0">All lenders, all terms</h2>
+        <div class="rates__meta"><span id="rateStamp">loading&hellip;</span></div>
+      </div>
+      <div id="ratesTable"></div>
+      <p class="disclaimer" style="margin-top:20px">Indicative advertised special rates only &mdash; not an offer of
+        credit. Specials generally require at least the stated minimum equity. Cash contributions are indicative,
+        subject to the lender&rsquo;s criteria and usually carry a clawback period. Rates change frequently and the rate
+        you are offered depends on your circumstances, the lender and loan structure. Lending criteria apply.
+        This is not financial advice.</p>
+    </div>
+  </section>
+
+  <section class="section section--light">
+    <div class="wrap">
+      <div class="section-head" data-reveal>
+        <span class="eyebrow">Beyond the headline rate</span>
+        <h2>Which lender is actually cheapest?</h2>
+        <p>The market low is just the smallest number in a column. This ranks lenders on what the fixed period
+          really costs you &mdash; interest less the cash contribution.</p>
+      </div>
+
+      <div class="card card--flat" style="padding:clamp(22px,3vw,34px)">
+        <div class="form-grid" style="margin-bottom:26px">
+          <div class="field">
+            <label for="bvLoan">Loan amount</label>
+            <div class="input-money"><span class="prefix">$</span>
+              <input type="text" id="bvLoan" inputmode="numeric" value="750,000"></div>
+          </div>
+          <div class="field">
+            <label for="bvTerm">Fixed term</label>
+            <select id="bvTerm" aria-label="Fixed term"></select>
+          </div>
+        </div>
+        <div id="bestValue"></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section section--light">
+    <div class="wrap">
+      <div class="section-head" data-reveal>
+        <span class="eyebrow">Read the fine print</span>
+        <h2>Why the lowest rate isn&rsquo;t always the best deal</h2>
+      </div>
+      <div class="grid grid-3">
+        <article class="card" data-reveal>
+          <h3>Cash contributions</h3>
+          <p style="margin:0">A lender 0.10% higher that pays you $6,000 cash is usually ahead for the first few years.
+            We run both numbers before recommending.</p>
+        </article>
+        <article class="card" data-reveal="100">
+          <h3>Low-equity margins</h3>
+          <p style="margin:0">Advertised specials assume 20% equity. Under that, most lenders add a margin that is not
+            shown on any rate table.</p>
+        </article>
+        <article class="card" data-reveal="200">
+          <h3>Structure beats rate</h3>
+          <p style="margin:0">Splitting terms, keeping a revolving facility and not resetting to 30 years will usually
+            save more than chasing 0.05%.</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section class="section cta-band">
+    <div class="wrap">
+      <h2>Want the rate you&rsquo;d actually get?</h2>
+      <p>Rate tables are advertised rates. We negotiate the real one.</p>
+      <div class="btn-row">
+        <a class="btn btn--cta" href="../apply.html">Get free advice</a>
+        <a class="btn btn--ghost" href="tel:+64273030000">Call 027 303 0000</a>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<div data-component="footer"></div>
+<script src="../assets/js/config.js"></script>
+<script src="../assets/js/analytics.js" defer></script>
+<script src="../assets/js/site.js" defer></script>
+<script src="../assets/js/rates.js" defer></script>
+</body>
+</html>

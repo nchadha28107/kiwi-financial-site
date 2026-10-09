@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en-NZ" data-root="../" data-page="tools">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Amortisation Calculator NZ | Kiwi Financial Solutions</title>
+<meta name="description" content="Free amortisation calculator for NZ home loans. See a year-by-year breakdown of principal, interest and loan balance, plus a balance decline chart.">
+<link rel="canonical" href="https://kiwifinancial.co.nz/tools/amortisation-calculator.html">
+<meta name="theme-color" content="#0C0634">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Amortisation Calculator NZ | Kiwi Financial Solutions">
+<meta property="og:description" content="Year-by-year breakdown of your loan balance, principal and interest.">
+<meta property="og:image" content="https://kiwifinancial.co.nz/assets/images/og-image.png">
+<link rel="icon" href="../favicon.ico" sizes="any">
+<link rel="apple-touch-icon" href="../assets/images/apple-touch-icon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Plus+Jakarta+Sans:wght@600;700;800&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../assets/css/style.css">
+</head>
+
+<body>
+<a class="skip-link" href="#main">Skip to content</a>
+<div data-component="header"></div>
+<noscript><div class="wrap" style="padding:20px 0"><img src="../assets/images/logo@2x.png" width="160" alt="Kiwi Financial Solutions - Auckland Mortgage Advisers"><p><a href="../index.html">Home</a> &middot; <a href="../apply.html">Apply</a> &middot; <a href="tel:+64273030000">027 303 0000</a></p></div></noscript>
+
+<main id="main">
+
+  <section class="hero page-hero">
+    <div class="hero__mesh" aria-hidden="true"></div>
+    <div class="wrap">
+      <div class="page-hero__inner">
+        <div>
+          <nav class="breadcrumb" aria-label="Breadcrumb">
+            <a href="../index.html">Home</a><span>/</span><a href="index.html">Tools</a><span>/</span><span>Amortisation calculator</span>
+          </nav>
+          <h1>Amortisation calculator</h1>
+          <p>See exactly how your loan balance falls year by year &mdash; and how much of each payment is still
+            going to the bank as interest.</p>
+          <div class="btn-row" style="margin-top:26px">
+            <a class="btn btn--cta" href="../apply.html">Apply Now</a>
+            <a class="btn btn--ghost" href="#calc">Jump to calculator</a>
+          </div>
+          <p class="trust-row" style="margin-top:22px">
+            <span data-tick>No credit check to enquire</span>
+            <span data-tick>Free service</span>
+            <span data-tick>100% independent</span>
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="calc">
+    <div class="wrap">
+      <div class="glass calc" data-calc="amortisation"
+           style="background:linear-gradient(150deg,rgba(244,248,251,.92),rgba(255,255,255,.96));border-color:var(--line)">
+        <div class="calc__inputs">
+          <div class="field">
+            <label for="amAmountText">Loan amount</label>
+            <div class="input-money"><span class="prefix">$</span>
+              <input type="text" id="amAmountText" inputmode="numeric" value="760,000"></div>
+            <input type="range" id="amAmountRange" min="50000" max="3000000" step="5000" value="760000" aria-label="Loan amount">
+            <div class="range-ends"><span>$50k</span><span>$3M</span></div>
+          </div>
+
+          <div class="field">
+            <label for="amRateText">Interest rate <span class="hint">% p.a.</span></label>
+            <div class="input-money has-suffix no-prefix"><span class="suffix-tag">%</span>
+              <input type="text" id="amRateText" inputmode="decimal" value="4.89"></div>
+            <input type="range" id="amRateRange" min="1" max="12" step="0.01" value="4.89" aria-label="Interest rate">
+            <div class="range-ends"><span>1%</span><span>12%</span></div>
+          </div>
+
+          <div class="field">
+            <label for="amTermText">Loan term <span class="hint">years</span></label>
+            <div class="input-money has-suffix no-prefix"><span class="suffix-tag">yrs</span>
+              <input type="text" id="amTermText" inputmode="numeric" value="30"></div>
+            <input type="range" id="amTermRange" min="1" max="30" step="1" value="30" aria-label="Loan term in years">
+            <div class="range-ends"><span>1 yr</span><span>30 yrs</span></div>
+          </div>
+
+          <div class="result-rows">
+            <div class="result-row"><span>Monthly repayment</span><b id="amPayment">$0</b></div>
+            <div class="result-row"><span>Total interest</span><b id="amInterest">$0</b></div>
+            <div class="result-row"><span>Total repaid</span><b id="amTotal">$0</b></div>
+            <div class="result-row"><span>Interest as % of loan</span><b id="amRatio">0%</b></div>
+          </div>
+
+          <a class="btn btn--cta btn--block" href="../apply.html">Want this rate? Apply free &rarr;</a>
+        </div>
+
+        <div class="calc__results">
+          <h3 style="margin-bottom:8px">Balance over time</h3>
+          <div class="chart-box chart-box--tall"><canvas id="amChart" role="img" aria-label="Line chart showing loan balance declining over the term"></canvas></div>
+          <p class="disclaimer">Notice how slowly the balance moves in the early years &mdash; that is amortisation.
+            Extra repayments made early have the biggest impact.</p>
+        </div>
+
+        <div style="grid-column:1/-1">
+          <h3>Year-by-year schedule</h3>
+          <div class="table-wrap">
+            <table class="amort">
+              <caption class="sr-only">Yearly amortisation schedule</caption>
+              <thead><tr>
+                <th scope="col">Year</th><th scope="col">Principal paid</th><th scope="col">Interest paid</th>
+                <th scope="col">Cumulative interest</th><th scope="col">Closing balance</th>
+              </tr></thead>
+              <tbody id="amBody"></tbody>
+            </table>
+          </div>
+          <p class="disclaimer" style="margin-top:18px">Results are estimates only and do not constitute financial advice.
+            Assumes a constant interest rate and no extra repayments. Lending criteria apply.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section cta-band">
+    <div class="wrap">
+      <h2>Want to pay this off faster?</h2>
+      <p>Loan structure matters more than most people realise. We&rsquo;ll show you how to shave years off without changing your lifestyle.</p>
+      <div class="btn-row">
+        <a class="btn btn--cta" href="../apply.html">Apply now for free</a>
+        <a class="btn btn--ghost" href="tel:+64273030000">Call 027 303 0000</a>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<div data-component="footer"></div>
+<script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.1/dist/chart.umd.min.js" defer></script>
+<script src="../assets/js/config.js"></script>
+<script src="../assets/js/analytics.js" defer></script>
+<script src="../assets/js/site.js" defer></script>
+<script src="../assets/js/calculators.js" defer></script>
+</body>
+</html>

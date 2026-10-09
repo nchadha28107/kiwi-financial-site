@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en-NZ" data-root="../" data-page="tools">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Mortgage Repayment Calculator NZ | Kiwi Financial Solutions</title>
+<meta name="description" content="Free NZ mortgage repayment calculator. See weekly, fortnightly or monthly repayments, total interest, LVR and a full amortisation table. No sign-up required.">
+<link rel="canonical" href="https://kiwifinancial.co.nz/tools/repayment-calculator.html">
+<meta name="theme-color" content="#0C0634">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Mortgage Repayment Calculator NZ | Kiwi Financial Solutions">
+<meta property="og:description" content="See your real repayments in seconds - weekly, fortnightly or monthly.">
+<meta property="og:image" content="https://kiwifinancial.co.nz/assets/images/og-image.png">
+<link rel="icon" href="../favicon.ico" sizes="any">
+<link rel="apple-touch-icon" href="../assets/images/apple-touch-icon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Plus+Jakarta+Sans:wght@600;700;800&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../assets/css/style.css">
+</head>
+
+<body>
+<a class="skip-link" href="#main">Skip to content</a>
+<div data-component="header"></div>
+<noscript><div class="wrap" style="padding:20px 0"><img src="../assets/images/logo@2x.png" width="160" alt="Kiwi Financial Solutions - Auckland Mortgage Advisers"><p><a href="../index.html">Home</a> &middot; <a href="../apply.html">Apply</a> &middot; <a href="tel:+64273030000">027 303 0000</a></p></div></noscript>
+
+<main id="main">
+
+  <section class="hero page-hero">
+    <div class="hero__mesh" aria-hidden="true"></div>
+    <div class="wrap">
+      <div class="page-hero__inner">
+        <div>
+          <nav class="breadcrumb" aria-label="Breadcrumb">
+            <a href="../index.html">Home</a><span>/</span><a href="index.html">Tools</a><span>/</span><span>Repayment calculator</span>
+          </nav>
+          <h1>Mortgage repayment calculator</h1>
+          <p>Work out exactly what your home loan will cost you each week, fortnight or month &mdash;
+            plus how much interest you&rsquo;ll pay over the life of the loan.</p>
+          <div class="btn-row" style="margin-top:26px">
+            <a class="btn btn--cta" href="../apply.html">Apply Now</a>
+            <a class="btn btn--ghost" href="#calc">Jump to calculator</a>
+          </div>
+          <p class="trust-row" style="margin-top:22px">
+            <span data-tick>No credit check to enquire</span>
+            <span data-tick>Free service</span>
+            <span data-tick>100% independent</span>
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="calc">
+    <div class="wrap">
+      <div class="glass calc" data-calc="repayment"
+           style="background:linear-gradient(150deg,rgba(244,248,251,.92),rgba(255,255,255,.96));border-color:var(--line)">
+        <div class="calc__inputs">
+          <div class="field">
+            <label for="priceText">Home price <span class="hint" id="depositPct">20.0% deposit</span></label>
+            <div class="input-money"><span class="prefix">$</span>
+              <input type="text" id="priceText" inputmode="numeric" value="950,000"></div>
+            <input type="range" id="priceRange" min="100000" max="5000000" step="10000" value="950000" aria-label="Home price">
+            <div class="range-ends"><span>$100k</span><span>$5M</span></div>
+          </div>
+
+          <div class="field">
+            <label for="depositText">Deposit <span class="hint">Cash, equity or KiwiSaver</span></label>
+            <div class="input-money"><span class="prefix">$</span>
+              <input type="text" id="depositText" inputmode="numeric" value="190,000"></div>
+            <input type="range" id="depositRange" min="0" max="2000000" step="5000" value="190000" aria-label="Deposit amount">
+            <div class="range-ends"><span>$0</span><span>$2M</span></div>
+          </div>
+
+          <div class="field">
+            <label for="ratePicker">Rate term <span class="hint" id="rateSource">loading today&rsquo;s best rate&hellip;</span></label>
+            <select id="ratePicker" aria-label="Rate term"></select>
+            <p class="field-note">Pre-filled with the sharpest advertised rate for the term you pick.
+              <a href="rates.html">See all rates &rarr;</a></p>
+          </div>
+
+          <div class="field">
+            <label for="rateText">Interest rate <span class="hint">% p.a.</span></label>
+            <div class="input-money has-suffix no-prefix"><span class="suffix-tag">%</span>
+              <input type="text" id="rateText" inputmode="decimal" value="4.89"></div>
+            <input type="range" id="rateRange" min="1" max="12" step="0.01" value="4.89" aria-label="Interest rate">
+            <div class="range-ends"><span>1%</span><span>12%</span></div>
+          </div>
+
+          <div class="field">
+            <label for="termText">Loan term <span class="hint">years</span></label>
+            <div class="input-money has-suffix no-prefix"><span class="suffix-tag">yrs</span>
+              <input type="text" id="termText" inputmode="numeric" value="30"></div>
+            <input type="range" id="termRange" min="10" max="30" step="1" value="30" aria-label="Loan term in years">
+            <div class="range-ends"><span>10 yrs</span><span>30 yrs</span></div>
+          </div>
+
+          <div class="field">
+            <label id="freqLabel">Repayment frequency</label>
+            <div class="toggle-row" role="radiogroup" aria-labelledby="freqLabel">
+              <input type="radio" name="freq" id="fw" value="weekly"><label for="fw">Weekly</label>
+              <input type="radio" name="freq" id="ff" value="fortnightly" checked><label for="ff">Fortnightly</label>
+              <input type="radio" name="freq" id="fm" value="monthly"><label for="fm">Monthly</label>
+            </div>
+            <p class="field-note">Paying fortnightly instead of monthly knocks years off most 30-year loans.</p>
+          </div>
+
+          <p class="nudge" id="lvrNote" hidden></p>
+        </div>
+
+        <div class="calc__results">
+          <div class="result-hero">
+            <small>Your repayment</small>
+            <div class="amount" id="outPayment">$0.00</div>
+            <div class="per" id="outFreq">per fortnight</div>
+          </div>
+
+          <div class="chart-box"><canvas id="chartSplit" role="img" aria-label="Doughnut chart showing principal versus interest"></canvas></div>
+          <div class="legend">
+            <span><i style="background:#1A3C5E"></i>Principal <b id="legendPrincipal"></b></span>
+            <span><i style="background:#FF6B35"></i>Interest <b id="legendInterest"></b></span>
+          </div>
+
+          <div class="result-rows">
+            <div class="result-row"><span>Loan amount</span><b id="outLoan">$0</b></div>
+            <div class="result-row"><span>Loan to value ratio (LVR)</span><b id="outLvr">0%</b></div>
+            <div class="result-row"><span>Number of payments</span><b id="outPeriods">0</b></div>
+            <div class="result-row"><span>Total interest payable</span><b id="outInterest">$0</b></div>
+            <div class="result-row"><span>Total amount repaid</span><b id="outTotal">$0</b></div>
+          </div>
+
+          <a class="btn btn--cta btn--block" href="../apply.html">Want this rate? Apply free &rarr;</a>
+        </div>
+
+        <div style="grid-column:1/-1">
+          <button class="btn btn--outline btn--sm" id="amortToggle" type="button" aria-expanded="false" aria-controls="amortWrap">
+            <span>Show amortisation table</span>
+          </button>
+          <div class="table-wrap" id="amortWrap" hidden>
+            <table class="amort">
+              <caption class="sr-only">Yearly amortisation schedule</caption>
+              <thead><tr><th scope="col">Year</th><th scope="col">Principal paid</th><th scope="col">Interest paid</th><th scope="col">Closing balance</th></tr></thead>
+              <tbody id="amortBody"></tbody>
+            </table>
+          </div>
+          <p class="disclaimer" style="margin-top:18px">Results are estimates only and do not constitute financial advice.
+            Lending criteria, fees and responsible lending obligations under the CCCFA apply. Actual repayments will depend on
+            the lender, loan structure and the rate you are approved for.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section section--light">
+    <div class="wrap">
+      <div class="section-head" data-reveal>
+        <span class="eyebrow">Good to know</span>
+        <h2>Getting more out of the numbers</h2>
+      </div>
+      <div class="grid grid-3">
+        <article class="card" data-reveal>
+          <h3>Fortnightly beats monthly</h3>
+          <p>Twenty-six fortnightly payments equal thirteen monthly payments a year, not twelve. That extra payment can cut
+            years off a 30-year loan without you feeling it.</p>
+        </article>
+        <article class="card" data-reveal="100">
+          <h3>LVR drives your rate</h3>
+          <p>Above 80% LVR most lenders add a low-equity margin. Getting your deposit over 20% &mdash; or using a First Home
+            Loan &mdash; can materially reduce what you pay.</p>
+        </article>
+        <article class="card" data-reveal="200">
+          <h3>Split your loan</h3>
+          <p>Most Kiwis fix part of the loan and float part of it. We structure splits so you can make lump-sum repayments
+            without break costs.</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section class="section cta-band">
+    <div class="wrap">
+      <h2>Like what you see?</h2>
+      <p>We&rsquo;ll take these numbers to 15+ lenders and come back with the sharpest deal you actually qualify for.</p>
+      <div class="btn-row">
+        <a class="btn btn--cta" href="../apply.html">Apply now for free</a>
+        <a class="btn btn--ghost" href="tel:+64273030000">Call 027 303 0000</a>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<div data-component="footer"></div>
+<script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.1/dist/chart.umd.min.js" defer></script>
+<script src="../assets/js/config.js"></script>
+<script src="../assets/js/analytics.js" defer></script>
+<script src="../assets/js/site.js" defer></script>
+<script src="../assets/js/rates.js" defer></script>
+<script src="../assets/js/calculators.js" defer></script>
+</body>
+</html>

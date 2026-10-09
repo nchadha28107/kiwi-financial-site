@@ -34,26 +34,6 @@
   };
   window.KFS_ICONS = I;
 
-  /* ---------------------------------------------------------------- data */
-  var SERVICES = [
-    { slug: 'home-loans', name: 'Home Loans', icon: 'home', blurb: 'First home or next home - structured to save you interest.' },
-    { slug: 'refinance', name: 'Refinance & Refix', icon: 'refresh', blurb: 'Rolling off a fixed rate? We re-shop your whole mortgage.' },
-    { slug: 'construction-loans', name: 'Construction & Development', icon: 'build', blurb: 'Progressive drawdown lending for new builds and projects.' },
-    { slug: 'asset-finance', name: 'Asset Finance', icon: 'truck', blurb: 'Vehicles, plant and equipment funded fast.' },
-    { slug: 'commercial-loans', name: 'Commercial & Business', icon: 'brief', blurb: 'Working capital, premises and business acquisition lending.' },
-    { slug: 'investment-property', name: 'Investment Property', icon: 'chart', blurb: 'Build your portfolio with the right lender and structure.' }
-  ];
-  var TOOLS = [
-    { slug: 'repayment-calculator', name: 'Repayment Calculator', icon: 'calc', blurb: 'See your weekly, fortnightly or monthly repayments.' },
-    { slug: 'refinance-calculator', name: 'Refinance Savings', icon: 'refresh', blurb: 'Find out what switching lenders could save you.' },
-    { slug: 'amortisation-calculator', name: 'Amortisation Schedule', icon: 'table', blurb: 'Year-by-year breakdown of your loan balance.' }
-  ];
-  window.KFS_SERVICES = SERVICES;
-  window.KFS_TOOLS = TOOLS;
-
-  var LENDERS = ['ANZ', 'ASB', 'BNZ', 'Westpac', 'Kiwibank', 'SBS Bank', 'TSB', 'ICBC', 'Bank of China', 'Heartland', 'Co-operative Bank', 'Resimac'];
-  window.KFS_LENDERS = LENDERS;
-
   /* ---------------------------------------------------------------- phone */
   // Accepts NZ mobiles (02x) and landlines (03/04/06/07/09), typed locally or
   // as +64/0064. Rejecting landlines loses commercial enquiries.
@@ -80,181 +60,6 @@
     }
   };
   window.KFSPhone = KFSPhone;
-
-  var TEAM = [
-    {
-      slug: 'pankaj', name: 'Pankaj Chhabra', initials: 'PC',
-      role: 'Director & Principal Adviser',
-      short: 'Close to 10 years in lending \u2014 including one of the big four banks \u2014 now giving genuinely independent advice.',
-      bio: 'After spending close to 10 years in the lending industry gaining experience in consumer and commercial loans, ' +
-        'along with working for one of the big four banks, Pankaj decided to go out on his own to provide independent ' +
-        'financial advice to clients. His passion for property and construction/development, combined with deep knowledge ' +
-        'of the lending industry, is what makes him stand out \u2014 he can provide insights and find solutions for complex ' +
-        'cases to get the best result for his clients. He believes that \u201CEveryone deserves a home\u201D and genuinely ' +
-        'loves helping his clients, as his client reviews make clear.',
-      tags: ['Residential lending', 'Construction & development', 'Commercial', 'Complex cases']
-    },
-    {
-      slug: 'rishabh', name: 'Rishabh Rastogi', initials: 'RR',
-      role: 'Client Relationship Manager',
-      short: 'Over 11 years in sales and customer service, focused on making the lending journey feel effortless.',
-      bio: 'With over 11 years of experience in sales and customer service, Rishabh is skilled in identifying customer ' +
-        'needs and building client relationships to ease their overall journey. Coming from a payments background, he ' +
-        'understands the importance of a hand-holding process to support clients and achieve the desired result. He ' +
-        'believes sales and service go hand in hand and that communication is the key \u2014 but customer satisfaction ' +
-        'is paramount.',
-      tags: ['Client care', 'Applications', 'Settlement support']
-    }
-  ];
-  window.KFS_TEAM = TEAM;
-
-  /* ---------------------------------------------------------------- header */
-  function logo(width) {
-    return '<a class="logo-link" href="' + R + 'index.html" aria-label="Kiwi Financial Solutions - home">' +
-      '<img src="' + R + 'assets/images/logo.png"' +
-      ' srcset="' + R + 'assets/images/logo.png 1x, ' + R + 'assets/images/logo@2x.png 2x, ' + R + 'assets/images/logo@3x.png 3x"' +
-      ' width="200" height="104" style="width:' + width + 'px"' +
-      ' alt="Kiwi Financial Solutions - Auckland Mortgage Advisers"></a>';
-  }
-
-  function dropdownItems(list, base) {
-    return list.map(function (s) {
-      return '<a href="' + R + base + '/' + s.slug + '.html"><span class="ico">' + I[s.icon] + '</span>' +
-        '<span><strong>' + s.name + '</strong><span>' + s.blurb + '</span></span></a>';
-    }).join('');
-  }
-
-  function buildHeader() {
-    var host = document.querySelector('[data-component="header"]');
-    if (!host) return;
-    var cur = function (p) { return PAGE === p ? ' aria-current="page"' : ''; };
-    var act = function (p) { return PAGE === p ? ' is-active' : ''; };
-
-    host.outerHTML =
-      '<header class="site-header" id="siteHeader">' +
-        '<div class="topbar"><div class="wrap topbar__inner">' +
-          '<div class="topbar__links">' +
-            '<a href="' + TEL + '">' + I.phone + PHONE + '</a>' +
-            '<a href="mailto:' + EMAIL + '">' + I.mail + EMAIL + '</a>' +
-            '<span style="display:inline-flex;gap:7px;align-items:center;color:#857fa8">' + I.pin + 'Auckland, New Zealand</span>' +
-          '</div>' +
-          '<a class="topbar__pill" href="' + R + 'contact.html">' + I.spark + 'Book a free consultation</a>' +
-        '</div></div>' +
-
-        '<nav class="navbar" aria-label="Main"><div class="wrap navbar__inner">' +
-          logo(160) +
-          '<ul class="navbar__menu">' +
-            '<li class="nav-item"><a class="nav-link" href="' + R + 'index.html"' + cur('home') + '>Home</a></li>' +
-            '<li class="nav-item"><a class="nav-link" href="' + R + 'services/index.html"' + cur('services') + '>Services' + I.chev + '</a>' +
-              '<div class="dropdown">' + dropdownItems(SERVICES, 'services') + '</div></li>' +
-            '<li class="nav-item"><a class="nav-link" href="' + R + 'tools/index.html"' + cur('tools') + '>Tools' + I.chev + '</a>' +
-              '<div class="dropdown">' + dropdownItems(TOOLS, 'tools') +
-                '<a href="' + R + 'tools/rates.html"><span class="ico">' + I.chart + '</span>' +
-                '<span><strong>Today\u2019s rates</strong><span>Compare advertised rates across 11 NZ lenders.</span></span></a>' +
-              '</div></li>' +
-            '<li class="nav-item"><a class="nav-link" href="' + R + 'about.html"' + cur('about') + '>About</a></li>' +
-            '<li class="nav-item"><a class="nav-link" href="' + R + 'contact.html"' + cur('contact') + '>Contact</a></li>' +
-          '</ul>' +
-          '<span class="nav-proof">' + I.check + '500+ Kiwis helped</span>' +
-          '<a class="btn btn--cta btn--sm" href="' + R + 'apply.html">Apply Now' + I.arrow + '</a>' +
-          '<button class="hamburger" id="hamburger" aria-label="Open menu" aria-expanded="false" aria-controls="mobileNav"><span></span><span></span><span></span></button>' +
-        '</div></nav>' +
-      '</header>' +
-
-      '<div class="nav-scrim" id="navScrim"></div>' +
-      '<aside class="mobile-nav" id="mobileNav" aria-label="Mobile menu">' +
-        '<div class="mobile-nav__top">' + logo(120) +
-          '<button class="mobile-nav__close" id="navClose" aria-label="Close menu">&times;</button></div>' +
-        '<div class="m-group' + act('home') + '"><a href="' + R + 'index.html"' + cur('home') + '>Home</a></div>' +
-        '<div class="m-group' + act('services') + '"><button class="m-toggle" aria-expanded="false">Services' + I.chev + '</button>' +
-          '<div class="m-sub">' + SERVICES.map(function (s) { return '<a href="' + R + 'services/' + s.slug + '.html">' + s.name + '</a>'; }).join('') +
-          '<a href="' + R + 'services/index.html">All services</a></div></div>' +
-        '<div class="m-group' + act('tools') + '"><button class="m-toggle" aria-expanded="false">Tools' + I.chev + '</button>' +
-          '<div class="m-sub">' + TOOLS.map(function (s) { return '<a href="' + R + 'tools/' + s.slug + '.html">' + s.name + '</a>'; }).join('') +
-          '<a href="' + R + 'tools/rates.html">Today\u2019s rates</a></div></div>' +
-        '<div class="m-group' + act('about') + '"><a href="' + R + 'about.html"' + cur('about') + '>About</a></div>' +
-        '<div class="m-group' + act('contact') + '"><a href="' + R + 'contact.html"' + cur('contact') + '>Contact</a></div>' +
-        '<a class="btn btn--cta btn--block" href="' + R + 'apply.html" data-track="apply_started" data-track-from="mobile-nav">Apply Now' + I.arrow + '</a>' +
-        '<a class="btn btn--outline btn--block" href="' + TEL + '" style="margin-top:12px">' + I.phone + 'Call ' + PHONE + '</a>' +
-      '</aside>';
-  }
-
-  /* ---------------------------------------------------------------- footer */
-  function buildFooter() {
-    var host = document.querySelector('[data-component="footer"]');
-    if (!host) return;
-    var year = new Date().getFullYear();
-
-    host.outerHTML =
-      '<footer class="site-footer footer">' +
-        '<div class="wrap">' +
-          '<div class="footer__grid">' +
-            '<div class="footer__brand">' + logo(160) +
-              '<p>Independent mortgage advisers in Auckland. We compare 15+ lenders so you get the right loan - not just the one your bank sells.</p>' +
-              '<div class="socials">' +
-                '<a href="https://www.facebook.com/" aria-label="Facebook" rel="noopener noreferrer" target="_blank">' + I.fb + '</a>' +
-                '<a href="https://www.linkedin.com/" aria-label="LinkedIn" rel="noopener noreferrer" target="_blank">' + I.li + '</a>' +
-                '<a href="https://www.instagram.com/" aria-label="Instagram" rel="noopener noreferrer" target="_blank">' + I.ig + '</a>' +
-              '</div>' +
-            '</div>' +
-            '<div><h5>Services</h5>' + SERVICES.map(function (s) { return '<a href="' + R + 'services/' + s.slug + '.html">' + s.name + '</a>'; }).join('') + '</div>' +
-            '<div><h5>Tools</h5>' + TOOLS.map(function (s) { return '<a href="' + R + 'tools/' + s.slug + '.html">' + s.name + '</a>'; }).join('') +
-              '<a href="' + R + 'tools/rates.html">Today\u2019s Rates</a>' +
-              '<a href="' + R + 'apply.html">Apply Online</a></div>' +
-            '<div><h5>Get in touch</h5><ul class="footer__contact">' +
-              '<li>' + I.phone + '<a href="' + TEL + '" style="padding:0">' + PHONE + '</a></li>' +
-              '<li>' + I.mail + '<a href="mailto:' + EMAIL + '" style="padding:0">' + EMAIL + '</a></li>' +
-              '<li>' + I.pin + '<span>Auckland, New Zealand</span></li>' +
-              '<li>' + I.clock + '<span>Mon-Fri 8:30am-6pm<br>Sat by appointment</span></li>' +
-            '</ul></div>' +
-          '</div>' +
-
-          '<div class="footer__lenders"><strong>Lenders we compare</strong><span>' + LENDERS.join(' &middot; ') + '</span></div>' +
-
-          '<div class="footer__legal">' +
-            '<div class="links">' +
-              '<a href="' + R + 'legal/disclaimer.html">Website Disclaimer</a>' +
-              '<a href="' + R + 'legal/privacy.html">Privacy Policy</a>' +
-              '<a href="' + R + 'legal/important-information.html">Important Information</a>' +
-              '<a href="' + R + 'legal/disclosure.html">Disclosure Statement</a>' +
-            '</div>' +
-            '<p>Kiwi Financial Solutions is a registered Financial Advice Provider under the Financial Markets Conduct Act 2013. ' +
-            'A copy of our disclosure statement is available free of charge on request. Information on this website is general in nature ' +
-            'and does not take your personal circumstances into account. It is not personalised financial advice. ' +
-            'All lending is subject to lender criteria, responsible lending obligations under the CCCFA, and approval. ' +
-            'Calculator results are estimates only and do not constitute financial advice.</p>' +
-            '<div class="footer__bottom"><span>&copy; ' + year + ' Kiwi Financial Solutions. All rights reserved.</span>' +
-            '<span>Let\u2019s grow together.</span></div>' +
-          '</div>' +
-        '</div>' +
-      '</footer>';
-  }
-
-  /* ---------------------------------------------------------------- team */
-  function buildTeam() {
-    [].forEach.call(document.querySelectorAll('[data-team]'), function (host) {
-      var full = host.getAttribute('data-team') === 'full';
-      var px = full ? 200 : 140;
-
-      host.innerHTML = TEAM.map(function (p, i) {
-        // 2x source constrained by CSS keeps the crop sharp on retina displays
-        var photo = '<img class="team-card__photo" src="' + R + 'assets/images/team/' + p.slug + '-280.jpg"' +
-          ' srcset="' + R + 'assets/images/team/' + p.slug + '-280.jpg 1x, ' + R + 'assets/images/team/' + p.slug + '-400.jpg 2x"' +
-          ' width="' + px + '" height="' + px + '" style="width:' + px + 'px;height:' + px + 'px"' +
-          ' loading="lazy" decoding="async" alt="' + p.name + ' \u2014 ' + p.role + ' at Kiwi Financial Solutions"' +
-          ' onerror="this.classList.add(\'is-missing\')">';
-
-        return '<article class="team-card' + (full ? ' team-card--full' : '') + '" data-reveal="' + i * 110 + '">' +
-          '<span class="team-card__ring" style="width:' + (px + 8) + 'px;height:' + (px + 8) + 'px">' + photo +
-          '<span class="team-card__fallback" aria-hidden="true">' + p.initials + '</span></span>' +
-          '<h3 class="team-card__name">' + p.name + '</h3>' +
-          '<p class="team-card__role">' + p.role + '</p>' +
-          '<p class="team-card__bio">' + (full ? p.bio : p.short) + '</p>' +
-          '<ul class="team-card__tags">' + p.tags.map(function (t) { return '<li>' + t + '</li>'; }).join('') + '</ul>' +
-          '</article>';
-      }).join('');
-    });
-  }
 
   /* ---------------------------------------------------------------- CRO furniture */
   function buildCro() {
@@ -468,6 +273,25 @@
     });
   }
 
+  /* touch/drag panning for the lender marquee, pausing the auto-scroll */
+  function initMarquee() {
+    var el = document.getElementById('lenderMarquee');
+    if (!el) return;
+    var down = false, startX = 0, startLeft = 0;
+    el.addEventListener('pointerdown', function (e) {
+      down = true; startX = e.clientX; startLeft = el.scrollLeft;
+      el.classList.add('is-dragging');
+      el.setPointerCapture(e.pointerId);
+    });
+    el.addEventListener('pointermove', function (e) {
+      if (!down) return;
+      el.scrollLeft = startLeft - (e.clientX - startX);
+    });
+    ['pointerup', 'pointercancel'].forEach(function (ev) {
+      el.addEventListener(ev, function () { down = false; el.classList.remove('is-dragging'); });
+    });
+  }
+
   /* smooth in-page anchors */
   function initAnchors() {
     document.addEventListener('click', function (e) {
@@ -484,10 +308,9 @@
   }
 
   /* ---------------------------------------------------------------- boot */
+  // Header, footer and content grids are baked in by tools-build/prerender.js,
+  // so this only attaches behaviour to markup that already exists.
   function boot() {
-    buildHeader();
-    buildFooter();
-    buildTeam();
     buildCro();
     initHeaderBehaviour();
     initReveal();
@@ -496,6 +319,7 @@
     initCarousel();
     initModal();
     initTicks();
+    initMarquee();
     initAnchors();
     document.dispatchEvent(new CustomEvent('kfs:ready'));
   }

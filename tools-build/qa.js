@@ -37,8 +37,9 @@ for (const file of files) {
 
   // every page must carry the logo; the internal dashboard uses its own chrome
   const isAdmin = rel.startsWith('admin/');
-  if (!isAdmin && !html.includes('data-component="header"')) warn(file, 'missing shared header/logo');
-  if (!isAdmin && !html.includes('data-component="footer"')) warn(file, 'missing shared footer');
+  if (!isAdmin && !html.includes('<!--kfs:header-->')) warn(file, 'header not pre-rendered (run prerender.js)');
+  if (!isAdmin && !html.includes('<!--kfs:footer-->')) warn(file, 'footer not pre-rendered (run prerender.js)');
+  if (!isAdmin && !/<nav class="navbar"/.test(html)) warn(file, 'no navbar in static HTML');
   if (isAdmin && !html.includes('logo-link')) warn(file, 'missing logo');
 
   // no-JS logo fallback with correct alt text

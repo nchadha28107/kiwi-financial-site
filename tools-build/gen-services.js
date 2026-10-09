@@ -8,7 +8,7 @@ const SERVICES = [
   {
     slug: 'home-loans',
     name: 'Home Loans',
-    title: 'Home Loans & First Home Buyer Mortgages Auckland',
+    title: 'Home Loans & First Home Buyers Auckland',
     metaDesc: 'Independent home loan advice in Auckland. We compare 15+ NZ lenders for first home buyers and movers, including First Home Loans and KiwiSaver withdrawals.',
     h1: 'Home loans, without the bank sales pitch',
     lede: 'Whether it is your first home or your fifth, we compare the whole market and structure the loan so you pay it off faster.',
@@ -43,7 +43,7 @@ const SERVICES = [
     slug: 'refinance',
     name: 'Refinance & Refix',
     title: 'Mortgage Refinance & Refix Auckland',
-    metaDesc: 'Rolling off a fixed rate? Kiwi Financial Solutions re-shops your whole mortgage across 15+ NZ lenders and negotiates cash contributions. Free, independent advice.',
+    metaDesc: 'Rolling off a fixed rate? We re-shop your whole mortgage across 15+ NZ lenders and negotiate cash contributions. Free, independent advice.',
     h1: 'Stop accepting the rate you are offered',
     lede: 'When your fixed rate rolls off, your bank quotes you a number. We quote you the market &mdash; and negotiate the cash contribution on top.',
     whatTitle: 'What is refinancing and who is it for?',
@@ -76,7 +76,7 @@ const SERVICES = [
   {
     slug: 'construction-loans',
     name: 'Construction & Development',
-    title: 'Construction & Development Finance Auckland',
+    title: 'Construction & Build Finance Auckland',
     metaDesc: 'Construction and development lending in Auckland. Progressive drawdown loans for new builds, major renovations and multi-unit developments. Independent advice.',
     h1: 'Finance that keeps your build on schedule',
     lede: 'Progressive drawdowns, fixed-price contracts, turn-key purchases and multi-unit developments &mdash; arranged by people who have done it before.',
@@ -144,7 +144,7 @@ const SERVICES = [
   {
     slug: 'commercial-loans',
     name: 'Commercial & Business',
-    title: 'Commercial & Business Lending Auckland',
+    title: 'Commercial & Business Loans Auckland',
     metaDesc: 'Commercial property, working capital and business acquisition finance in Auckland. We compare bank and non-bank lenders to get your deal funded.',
     h1: 'Lending that works at business speed',
     lede: 'Commercial property, working capital, business acquisition and bridging &mdash; structured around your cash flow, not a template.',
@@ -217,12 +217,12 @@ const head = (s) => `<!DOCTYPE html>
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>${s.title} | Kiwi Financial Solutions</title>
+<title>${s.title} | Kiwi Financial</title>
 <meta name="description" content="${s.metaDesc}">
 <link rel="canonical" href="https://kiwifinancial.co.nz/services/${s.slug}.html">
 <meta name="theme-color" content="#0C0634">
 <meta property="og:type" content="website">
-<meta property="og:title" content="${s.title} | Kiwi Financial Solutions">
+<meta property="og:title" content="${s.title} | Kiwi Financial">
 <meta property="og:description" content="${s.metaDesc}">
 <meta property="og:url" content="https://kiwifinancial.co.nz/services/${s.slug}.html">
 <meta property="og:image" content="https://kiwifinancial.co.nz/assets/images/og-image.png">

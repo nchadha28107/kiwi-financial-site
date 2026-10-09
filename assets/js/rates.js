@@ -223,7 +223,10 @@
         '<p class="rates-legend"><span class="rates-legend__key">Market low</span>' +
         'The lowest advertised rate for that term across the lenders we compare. Ties are all marked. ' +
         'It is based on the published rate only \u2014 it does not account for cash contributions, fees, ' +
-        'your equity band or loan structure, which routinely change which lender is actually cheapest.</p>';
+        'your equity band or loan structure, which routinely change which lender is actually cheapest.</p>' +
+        '<p class="rates-legend"><span class="rates-legend__key">&mdash;</span>' +
+        'That lender does not advertise a rate for this term on the product shown. It is not a high rate, ' +
+        'it is no rate &mdash; Heartland, for example, publishes floating only.</p>';
     });
   }
 

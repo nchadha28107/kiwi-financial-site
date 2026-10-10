@@ -22,12 +22,16 @@ function walk(dir, out = []) {
   return out;
 }
 
-/** Replaces the content between <!--kfs:name--> markers, inserting them on first run. */
+/**
+ * Replaces the content between <!--kfs:name--> markers, inserting them on first run.
+ * The match is greedy (first open marker to LAST close marker) so that a region
+ * corrupted by nesting collapses back to a single clean block.
+ */
 function region(html, name, content, placeholderRe) {
   const open = `<!--kfs:${name}-->`;
   const close = `<!--/kfs:${name}-->`;
   const block = `${open}${content}${close}`;
-  const existing = new RegExp(`${open}[\\s\\S]*?${close}`);
+  const existing = new RegExp(`${open}[\\s\\S]*${close}`);
 
   if (existing.test(html)) return html.replace(existing, block);
   if (placeholderRe && placeholderRe.test(html)) return html.replace(placeholderRe, block);
@@ -105,23 +109,24 @@ for (const file of walk(ROOT)) {
 
   if (/id="servicesGrid"/.test(html)) {
     const style = rel === 'index.html' ? 'link' : 'button';
-    html = html.replace(
-      /(<div class="grid grid-3" id="servicesGrid">)[\s\S]*?(<\/div>\s*<\/div>)/,
-      (m, a, b) => `${a}<!--kfs:services-->${L.servicesGrid(R, style)}<!--/kfs:services-->${b}`);
+    html = region(html, 'services', L.servicesGrid(R, style),
+      /(?<=<div class="grid grid-3" id="servicesGrid">)(?=<\/div>)/);
   }
   if (/id="toolsGrid"/.test(html)) {
-    html = html.replace(
-      /(<div class="grid grid-3" id="toolsGrid">)[\s\S]*?(<\/div>\s*<\/div>)/,
-      (m, a, b) => `${a}<!--kfs:tools-->${L.toolsGrid(R)}<!--/kfs:tools-->${b}`);
+    html = region(html, 'tools', L.toolsGrid(R),
+      /(?<=<div class="grid grid-3" id="toolsGrid">)(?=<\/div>)/);
   }
-  html = html.replace(/(<div class="team-grid" data-team="(teaser|full)"[^>]*>)[\s\S]*?(<\/div>)/g,
-    (m, a, v, b) => `${a}<!--kfs:team-->${L.teamGrid(R, v)}<!--/kfs:team-->${b}`);
-  html = html.replace(/(<ul class="ticks" id="whyList"[^>]*>)[\s\S]*?(<\/ul>)/,
-    (m, a, b) => `${a}<!--kfs:why-->${L.tickList(L.WHY_POINTS)}<!--/kfs:why-->${b}`);
-  html = html.replace(/(<ul class="ticks" id="indList"[^>]*>)[\s\S]*?(<\/ul>)/,
-    (m, a, b) => `${a}<!--kfs:ind-->${L.tickList(L.INDEPENDENCE_POINTS)}<!--/kfs:ind-->${b}`);
-  html = html.replace(/(<div class="marquee__track" id="lenderTrack">)[\s\S]*?(<\/div>)/,
-    (m, a, b) => `${a}<!--kfs:lenders-->${L.lenderMarquee(R)}<!--/kfs:lenders-->${b}`);
+  const teamVariant = (html.match(/data-team="(teaser|full)"/) || [, null])[1];
+  if (teamVariant) {
+    html = region(html, 'team', L.teamGrid(R, teamVariant),
+      /(?<=<div class="team-grid" data-team="(?:teaser|full)"[^>]*>)(?=<\/div>)/);
+  }
+  html = region(html, 'why', L.tickList(L.WHY_POINTS),
+    /(?<=<ul class="ticks" id="whyList"[^>]*>)(?=<\/ul>)/);
+  html = region(html, 'ind', L.tickList(L.INDEPENDENCE_POINTS),
+    /(?<=<ul class="ticks" id="indList"[^>]*>)(?=<\/ul>)/);
+  html = region(html, 'lenders', L.lenderMarquee(R),
+    /(?<=<div class="marquee__track" id="lenderTrack">)(?=<\/div>)/);
 
   // structured data: org on the home page, breadcrumbs everywhere below root
   const blobs = [];

@@ -7,8 +7,6 @@ document.addEventListener('kfs:ready', function () {
   if (!form) return;
 
   var I = window.KFS_ICONS;
-  var STORE_KEY = 'kfs_lead_draft';
-  var DRAFT_TTL = 24 * 60 * 60 * 1000;
   var ENDPOINT = (window.KFS_CONFIG && window.KFS_CONFIG.lead && window.KFS_CONFIG.lead.endpoint) ||
     window.KFS_LEAD_ENDPOINT || null;
 
@@ -334,7 +332,7 @@ document.addEventListener('kfs:ready', function () {
     });
   });
 
-  /* ------------------------------------------------------------- draft persistence */
+  /* ------------------------------------------------------------- contact state */
   function save() {
     state.contact = {
       name: nameEl.value.trim(),
@@ -342,51 +340,6 @@ document.addEventListener('kfs:ready', function () {
       email: emailEl.value.trim(),
       callTime: (form.querySelector('input[name="callTime"]:checked') || {}).value || 'Anytime'
     };
-    try {
-      if (!state.goal) return; // never clobber a saved draft with an empty one
-      localStorage.setItem(STORE_KEY, JSON.stringify({ t: Date.now(), step: step, state: state }));
-    } catch (e) { /* private browsing - draft saving is best-effort */ }
-  }
-
-  function clearDraft() { try { localStorage.removeItem(STORE_KEY); } catch (e) {} }
-
-  function loadDraft() {
-    try {
-      var raw = localStorage.getItem(STORE_KEY);
-      if (!raw) return null;
-      var d = JSON.parse(raw);
-      if (!d || Date.now() - d.t > DRAFT_TTL || !d.state || !d.state.goal) { clearDraft(); return null; }
-      return d;
-    } catch (e) { return null; }
-  }
-
-  function restore(d) {
-    state = d.state;
-    // Fill the contact inputs first - selectGoal() re-saves from the DOM.
-    var c = state.contact || {};
-    nameEl.value = c.name || '';
-    phoneEl.value = c.phone || '';
-    emailEl.value = c.email || '';
-    var ct = form.querySelector('input[name="callTime"][value="' + (c.callTime || 'Anytime') + '"]');
-    if (ct) ct.checked = true;
-    selectGoal(state.goal);
-    go(Math.min(d.step || 2, 3));
-  }
-
-  var draft = loadDraft();
-  var banner = document.getElementById('resumeBanner');
-  if (draft) {
-    banner.hidden = false;
-    document.getElementById('resumeYes').addEventListener('click', function () {
-      banner.hidden = true;
-      restore(draft);
-    });
-    document.getElementById('resumeNo').addEventListener('click', function () {
-      banner.hidden = true;
-      clearDraft();
-      state = { goal: null, details: {}, contact: {} };
-      go(1);
-    });
   }
 
   /* ------------------------------------------------------------- notification payload */
@@ -500,7 +453,6 @@ document.addEventListener('kfs:ready', function () {
 
     var payload = buildPayload();
     send(payload).then(function () {
-      clearDraft();
       if (window.KFSTrack) window.KFSTrack.submitted(payload);
       var first = state.contact.name.split(' ')[0] || 'there';
       var when = state.contact.callTime === 'Anytime'

@@ -72,6 +72,8 @@ body {
 }
 
 img { max-width: 100%; display: block; }
+/* author display rules outrank the UA [hidden] rule, so state it explicitly */
+[hidden] { display: none !important; }
 a { color: var(--primary); text-decoration: none; transition: color var(--t-fast); }
 a:hover { color: var(--accent); }
 button, input, select, textarea { font: inherit; color: inherit; }

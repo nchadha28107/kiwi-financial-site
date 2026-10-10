@@ -66,7 +66,8 @@
     if (document.body.hasAttribute('data-no-cro')) return;
     var el = document.createElement('div');
     el.innerHTML =
-      '<button class="fab" id="fabConsult" type="button">' + I.spark + '<span class="fab__label">Book Free Consultation</span></button>' +
+      '<button class="fab" id="fabConsult" type="button" aria-label="Request a call back">' + I.phone +
+        '<span class="fab__label">Request a call back</span></button>' +
       '<div class="mobile-bar">' +
         '<a class="btn btn--outline" href="' + TEL + '">' + I.phone + 'Call Now</a>' +
         '<a class="btn btn--cta" href="' + R + 'apply.html" data-track="apply_started" data-track-from="mobile-bar">Apply Free</a>' +

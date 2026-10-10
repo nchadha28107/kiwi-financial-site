@@ -9,7 +9,7 @@
   {
     "slug": "asb",
     "name": "ASB",
-    "colour": "#E4002B",
+    "colour": "#FCBD1B",
     "logo": "assets/logos/asb.svg",
     "invert": false
   },
@@ -44,9 +44,9 @@
   {
     "slug": "sbs",
     "name": "SBS Bank",
-    "colour": "#007B8A",
+    "colour": "#FF6900",
     "logo": "assets/logos/sbs.png",
-    "invert": true
+    "invert": false
   },
   {
     "slug": "cooperative",
@@ -58,7 +58,7 @@
   {
     "slug": "heartland",
     "name": "Heartland Bank",
-    "colour": "#6B2C91",
+    "colour": "#0A2642",
     "logo": "assets/logos/heartland.svg",
     "invert": false
   },
